@@ -1,0 +1,34 @@
+{
+  "id": "stardust",
+  "title": "Stardust",
+  "description": "The Stardust system for FoundryVTT!",
+  "version": "0.0.1",
+  "compatibility": {
+    "minimum": 10,
+    "verified": "11.307",
+    "maximum": 11
+  },
+  "authors": [{
+    "name": "Asacolips"
+  }],
+  "esmodules": ["module/Stardust.mjs"],
+  "styles": ["css/Stardust.css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt",
+  "changelog": "CHANGELOG.md"
+}

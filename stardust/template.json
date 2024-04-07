@@ -1,0 +1,258 @@
+{
+  "Actor": {
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "wounds": 0,
+		"woundattribute": "body",
+		"stress": 0,
+		"shields": 0,
+		"saves": {
+			"pass": 0,
+			"fail": 0
+		},
+		"attributes": {
+			"body": 0,
+			"agility": 0,
+			"mind": 0,
+			"will": 0
+		},
+		"skills": {
+			"acrobatics": {
+				"training": 0,
+				"base": "body"
+			},
+			"athletics": {
+				"training": 0,
+				"base": "body"
+			},
+			"cqc": {
+				"training": 0,
+				"base": "body"
+			},
+			"artillery": {
+				"training": 0,
+				"base": "agility"
+			},
+			"firearms": {
+				"training": 0,
+				"base": "agility"
+			},
+			"piloting": {
+				"training": 0,
+				"base": "agility"
+			},
+			"sleight": {
+				"training": 0,
+				"base": "agility"
+			},
+			"stealth": {
+				"training": 0,
+				"base": "agility"
+			},
+			"computers": {
+				"training": 0,
+				"base": "mind"
+			},
+			"culture": {
+				"training": 0,
+				"base": "mind"
+			},
+			"engineering": {
+				"training": 0,
+				"base": "mind"
+			},
+			"investigation": {
+				"training": 0,
+				"base": "mind"
+			},
+			"medicine": {
+				"training": 0,
+				"base": "mind"
+			},
+			"science": {
+				"training": 0,
+				"base": "mind"
+			},
+			"insight": {
+				"training": 0,
+				"base": "will"
+			},
+			"intimidation": {
+				"training": 0,
+				"base": "will"
+			},
+			"perception": {
+				"training": 0,
+				"base": "will"
+			},
+			"performance": {
+				"training": 0,
+				"base": "will"
+			},
+			"persuasion": {
+				"training": 0,
+				"base": "will"
+			},
+			"psionics": {
+				"training": 0,
+				"base": "will"
+			},
+			"survival": {
+				"training": 0,
+				"base": "will"
+			}
+		},
+        "biography": ""
+      }
+    },
+    "character": {
+      "templates": ["base"]
+    },
+    "npc": {
+      "templates": ["base"]
+    }
+  },
+  "Item": {
+    "types": ["feature","item","spell"],
+    "templates": {
+      "base": {
+        "description": "",
+		"damage": 0,
+		"range": 0
+      }
+    },
+    "feature": {
+		"attributes": {
+			"body": "0",
+			"agility": "0",
+			"mind": "0",
+			"will": "0"
+		},
+		"skills": {
+			"acrobatics": {
+				"training": 0,
+				"base": "body"
+			},
+			"athletics": {
+				"training": 0,
+				"base": "body"
+			},
+			"cqc": {
+				"training": 0,
+				"base": "body"
+			},
+			"artillery": {
+				"training": 0,
+				"base": "agility"
+			},
+			"firearms": {
+				"training": 0,
+				"base": "agility"
+			},
+			"piloting": {
+				"training": 0,
+				"base": "agility"
+			},
+			"sleight": {
+				"training": 0,
+				"base": "agility"
+			},
+			"stealth": {
+				"training": 0,
+				"base": "agility"
+			},
+			"computers": {
+				"training": 0,
+				"base": "mind"
+			},
+			"culture": {
+				"training": 0,
+				"base": "mind"
+			},
+			"engineering": {
+				"training": 0,
+				"base": "mind"
+			},
+			"investigation": {
+				"training": 0,
+				"base": "mind"
+			},
+			"medicine": {
+				"training": 0,
+				"base": "mind"
+			},
+			"science": {
+				"training": 0,
+				"base": "mind"
+			},
+			"insight": {
+				"training": 0,
+				"base": "will"
+			},
+			"intimidation": {
+				"training": 0,
+				"base": "will"
+			},
+			"perception": {
+				"training": 0,
+				"base": "will"
+			},
+			"performance": {
+				"training": 0,
+				"base": "will"
+			},
+			"persuasion": {
+				"training": 0,
+				"base": "will"
+			},
+			"psionics": {
+				"training": 0,
+				"base": "will"
+			},
+			"survival": {
+				"training": 0,
+				"base": "will"
+			}
+		}
+	},
+    "item": {
+      "templates": ["base"],
+	  "disabled": 0,
+	  "skill_req": "none",
+	  "range": 0,
+	  "armor": 0,
+	  "type": {
+		"blunt": 0,
+		"slash": 0,
+		"pierce": 0,
+		"acid": 0,
+		"cold": 0,
+		"electricity": 0,
+		"heat": 0
+	  },
+	  "traits": {
+		"light": 0,
+		"heavy": 0,
+		"twohand": 0,
+		"trip": 0,
+		"brace": 0,
+		"reach": 0
+	  },
+      "bulk": 1,
+	  "addedstoragebulk": 0
+    },
+    "spell": {
+      "templates": ["base"],
+	  "type": {
+		"blunt": 0,
+		"slash": 0,
+		"pierce": 0,
+		"acid": 0,
+		"cold": 0,
+		"electricity": 0,
+		"heat": 0
+	  }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<header class="card-header">
+    <div>
+        {{#if (notNull item)}}
+            <div class="grid grid-6col">
+                <div class="grid-span-1">
+                    <img style="float:left;" src="{{actor.img}}" title="{{actor.name}}" width="18" height="18"/>
+                    <img style="float:right;" src="{{item.img}}" title="{{item.name}}" width="18" height="18"/>
+                </div>
+                <div class="grid-span-5">
+                    {{#if flavor}}
+                    <h4 class="item-name">{{flavor}}</h4>
+                    {{else}}
+                    <h4 class="item-name">{{item.name}}</h4>
+                    {{/if}}
+                </div>
+            </div>
+        {{else}}
+            <div class="grid grid-6col">
+                <div class="grid-span-1">
+                    {{#if (notNull actor)}}
+                        <img style="float:left;" src="{{actor.img}}" title="{{actor.name}}" width="36" height="36"/>
+                    {{/if}}
+                </div>
+                <div class="grid-span-5">
+                    {{#if flavor}}
+                    <h4 class="item-name">{{flavor}}</h4>
+                    {{/if}}
+                </div>
+            </div>
+        {{/if}}
+    </div>
+    <div style="display:inline-block;">
+        <label>{{#if (overZero item.system.range)}}Range: {{item.system.range}}ft {{/if}}</label><br>
+        <label>{{damage}}</label><br>
+        <label>{{traits}}</label>
+    </div>
+</header>
+<div class="card-content">
+    <div style="border: 4px groove #eeede0;">
+        <!-- Description -->
+        {{editor item.system.description target="item.system.description" rollData=rollData button=false owner=owner editable=false}}
+    </div>
+</div>
+<div class="dice-roll">
+    <div class="dice-result">
+        <div class="dice-formula">{{formula}}</div>
+        {{{tooltip}}}
+        <h4 class="dice-total">{{total}}</h4>
+    </div>
+</div>
