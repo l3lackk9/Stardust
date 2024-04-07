@@ -1,2 +1,2 @@
 # Stardust
-A repository for the development of the Stardust VTT system
+A repository for the development of the Stardust Foundry System
