@@ -96,12 +96,22 @@ export function maxDiceNumber(val) {
 
 export function solveSkillRoll( actor, baseskill, trainingval) {
   var skillroll = "" 
-  skillroll += rollLevelToDice(actor.system.attributes[baseskill]) + " + " + rollLevelToDice(trainingval)
+  var skillbonus = "";
+  if(rollLevelToDice(trainingval) != "0")
+  {
+    skillbonus = " + " + rollLevelToDice(trainingval);
+  }
+  skillroll += rollLevelToDice(actor.system.attributes[baseskill]) + skillbonus;
   return skillroll
 }
 
 export function solveDefenseRoll( actor) {
-  var defenseroll = "8 + " + rollLevelToDice(actor.system.currentarmor)
+  var skillbonus = "";
+  if(rollLevelToDice(actor.system.currentarmor) != "0")
+  {
+    skillbonus = " + " + rollLevelToDice(actor.system.currentarmor);
+  }
+  var defenseroll = "8" + skillbonus;
   return defenseroll
 }
 
