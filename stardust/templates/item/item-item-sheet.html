@@ -1,0 +1,94 @@
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
+      <h3 class="charname">{{#if (overZero item.system.range)}}Range: {{item.system.range}}ft {{/if}}{{system.damagedata}}<br>{{system.traitsdata}}</h3>
+      
+      <div class="resource">
+        <label class="resource-label">Quantity</label>
+        <input type="text" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"/>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">Description</a>
+    <a class="item" data-tab="attributes">Attributes</a>
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Description Tab --}}
+    <div class="tab" data-group="primary" data-tab="description">
+      {{!-- To render inline rolls in a TinyMCE editor, you need to pass the parent actor's (if any) roll data to the rollData prop. --}}
+      {{editor system.description target="system.description" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+
+    {{!-- Attributes Tab --}}
+    <div class="tab attributes" data-group="primary" data-tab="attributes">
+      {{!-- As you add new fields, add them in here! --}}
+      <div class="resource">
+        <h2>Stats</h2></br>
+        <div class="properties grid grid-3col">
+          <div class="resource flex-group-center">
+            <label for="system.damage" class="resource-label">Skill Roll</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              {{{dropdown (getskilllist) this.system.skill_req "system." "skill_req" ""}}}
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+            <label for="system.range" class="resource-label">Range</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.range" value="{{system.range}}" data-dtype="Number"/>
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+            <label for="system.damage" class="resource-label">Damage</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.damage" value="{{system.damage}}" data-dtype="Number"/>
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+            <label for="system.bulk" class="resource-label">Bulk</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.bulk" value="{{system.bulk}}" data-dtype="Number"/>
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+            <label for="system.damage" class="resource-label">Armor</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              {{{dropdown (getdiceindexes) this.system.armor "system." "armor" ""}}}
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+            <label for="system.bulk" class="resource-label">Storage Capacity</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.addedstoragebulk" value="{{system.addedstoragebulk}}" data-dtype="Number"/>
+            </div>
+          </div>
+        </div>
+        <h2>Traits</h2></br>
+        <div class="properties grid grid-3col">
+          {{#each system.traits as |trait key|}}
+          <div class="align-left">
+            <input type="checkbox" name="system.traits.{{key}}" {{#if (notZero trait)}}checked{{/if}} />
+            <span class="resource-label">{{#localizestardust key}}{{/localizestardust}}</span>
+          </div>
+          {{/each}}
+        </div>
+        <h2>Damage Type</h2></br>
+        <div class="properties grid grid-3col">
+          {{#each system.type as |type key|}}
+          <div class="align-left">
+            <input type="checkbox" name="system.type.{{key}}" {{#if (notZero type)}}checked{{/if}} />
+            <span class="resource-label">{{#localizestardust key}}{{/localizestardust}}</span>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
