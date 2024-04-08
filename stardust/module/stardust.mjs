@@ -170,7 +170,7 @@ Handlebars.registerHelper('rolldefense', function() {
 });
 
 Handlebars.registerHelper('maxwounds', function() {
-  return maxDiceNumber(this.actor.system.attributes[this.actor.system.woundattribute])
+  return maxDiceNumber(this.actor.system.attributes[this.actor.system.woundattribute]) - safeNumber(this.actor.system.contamination)
 });
 
 Handlebars.registerHelper('maxmortaltrauma', function() {

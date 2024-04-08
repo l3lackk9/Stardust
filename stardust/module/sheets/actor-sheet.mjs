@@ -184,6 +184,13 @@ export class StardustActorSheet extends ActorSheet {
           dataset.roll = solveSkillRoll( owner, owner.system.skills[item.system.skill_req].base, owner.system.skills[item.system.skill_req].training)
         }
       }
+
+      // Handle contamination debug
+      let contamination = "";
+      if(safeNumber(owner.system.contamination) != 0)
+      { 
+        contamination = " -"+safeNumber(owner.system.contamination) + "[Contamination]";
+      }
   
       // Handle rolls that supply the formula directly. Pretty much all of these are  going to be used for tohits anyway in combat checks
       let label = dataset.label ? `${dataset.label}` : '';
@@ -194,42 +201,42 @@ export class StardustActorSheet extends ActorSheet {
         none: {
         label: "None",
         callback: () => {
-            chatCardRoll( dataset.roll, label, owner, item, owner.token, 0, true, 0)
+            chatCardRoll( dataset.roll + contamination, label, owner, item, owner.token, 0, true, 0)
             if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
           }
         },
         tiny: {
         label: "Tiny (d4)",
         callback: () => {
-            chatCardRoll( dataset.roll + " + 1d4[Tiny]", label, owner, item, owner.token, 0, true, 0)
+            chatCardRoll( dataset.roll + " + 1d4[Tiny]" + contamination, label, owner, item, owner.token, 0, true, 0)
             if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
           }
         },
         small: {
         label: "Small (d6)",
         callback: () => {
-            chatCardRoll( dataset.roll + " + 1d6[Small]", label, owner, item, owner.token, 0, true, 0)
+            chatCardRoll( dataset.roll + " + 1d6[Small]" + contamination, label, owner, item, owner.token, 0, true, 0)
             if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
           }
         },
         good: {
         label: "Good (d8)",
         callback: () => {
-            chatCardRoll( dataset.roll + " + 1d8[Good]", label, owner, item, owner.token, 0, true, 0)
+            chatCardRoll( dataset.roll + " + 1d8[Good]" + contamination, label, owner, item, owner.token, 0, true, 0)
             if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
           }
         },
         great: {
         label: "Great (d10)",
         callback: () => {
-            chatCardRoll( dataset.roll + " + 1d10[Great]", label, owner, item, owner.token, 0, true, 0)
+            chatCardRoll( dataset.roll + " + 1d10[Great]" + contamination, label, owner, item, owner.token, 0, true, 0)
             if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
           }
         },
         amazing: {
         label: "Amazing (d12)",
         callback: () => {
-            chatCardRoll( dataset.roll + " + 1d12[Amazing]", label, owner, item, owner.token, 0, true, 0)
+            chatCardRoll( dataset.roll + " + 1d12[Amazing]" + contamination, label, owner, item, owner.token, 0, true, 0)
             if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
           }
         }
