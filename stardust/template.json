@@ -5,6 +5,8 @@
       "base": {
         "wounds": 0,
 		"woundattribute": "body",
+		"mortaltrauma": 0,
+		"currentMemoryUsed": 0,
 		"stress": 0,
 		"shields": 0,
 		"saves": {
@@ -244,6 +246,7 @@
     },
     "spell": {
       "templates": ["base"],
+	  "memory": 1,
 	  "type": {
 		"blunt": 0,
 		"slash": 0,

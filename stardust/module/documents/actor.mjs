@@ -36,6 +36,7 @@ export class StardustActor extends Actor {
     }
     systemData.currentBulk = 0
     systemData.maxBulk = 0
+    systemData.currentMemoryUsed = 0;
 
     // Iterate through items, scan for armor
     for (let i of actorData.items) {
@@ -71,6 +72,10 @@ export class StardustActor extends Actor {
         {
           systemData.currentBulk += safeNumber(i.system.bulk) * safeNumber(i.system.quantity)
         }
+      }
+      else if (i.type === 'spell') {
+        // get memory cost of all spells
+        systemData.currentMemoryUsed += safeNumber(i.system.memory);
       }
     }
 

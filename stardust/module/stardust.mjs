@@ -173,6 +173,10 @@ Handlebars.registerHelper('maxwounds', function() {
   return maxDiceNumber(this.actor.system.attributes[this.actor.system.woundattribute])
 });
 
+Handlebars.registerHelper('maxmortaltrauma', function() {
+  return 3; // Hardcoded naughtyness - can fix later if this ever needs to be configured
+});
+
 Handlebars.registerHelper('getdiceindexes', function() {
   return CONFIG.STARDUST.dicetoindex
 });
@@ -191,6 +195,10 @@ Handlebars.registerHelper('getattributecolor', function(val) {
 
 Handlebars.registerHelper('getSpeed', function() {
   return (maxDiceNumber(this.system.attributes["agility"]) * 5) + "ft"
+});
+
+Handlebars.registerHelper('getPsiMemory', function() {
+  return maxDiceNumber(this.system.attributes["mind"])
 });
 
 Handlebars.registerHelper('getBulkTotal', function() {
@@ -218,10 +226,35 @@ Handlebars.registerHelper('getBulkPercent', function() {
   return val * 100.0
 });
 
+Handlebars.registerHelper('getBulkPercentUnclamped', function() {
+  if(this.system.maxBulk == 0)
+    return 0
+  var val = safeNumber(this.system.currentBulk) / safeNumber(this.system.maxBulk)
+  return val * 100.0
+});
+
+Handlebars.registerHelper('getMemoryPercent', function() {
+  var val = safeNumber(this.system.currentMemoryUsed) / maxDiceNumber(this.system.attributes["mind"])
+  if(val < 0) val = 0
+  if(val > 1) val = 1
+  return val * 100.0
+});
+Handlebars.registerHelper('getMemoryPercentUnclamped', function() {
+  var val = safeNumber(this.system.currentMemoryUsed) / maxDiceNumber(this.system.attributes["mind"])
+  return val * 100.0
+});
+
 Handlebars.registerHelper('invertedBulkPercent', function() {
   if(this.system.maxBulk == 0)
     return 0
   var val = safeNumber(this.system.currentBulk) / safeNumber(this.system.maxBulk)
+  if(val < 0) val = 0
+  if(val > 1) val = 1
+  return 100.0 - (val * 100.0)
+});
+
+Handlebars.registerHelper('invertedMemoryPercent', function() {
+  var val = safeNumber(this.system.currentMemoryUsed) / maxDiceNumber(this.system.attributes["mind"])
   if(val < 0) val = 0
   if(val > 1) val = 1
   return 100.0 - (val * 100.0)
