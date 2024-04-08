@@ -8,7 +8,7 @@
       {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
       use both the "grid" and "grid-Ncol" class where "N" can be any number
       from 1 to 12 and will create that number of columns.  --}}
-      <div class="resources grid grid-4col">
+      <div class="resources grid grid-3col">
 
         {{!-- "flex-group-center" is also defined in the _grid.scss file
         and it will add a small amount of padding, a border, and will
@@ -30,18 +30,32 @@
         </div>
 
         <div class="resource flex-group-center">
+          <label for="system.mortaltrauma" class="resource-label">Mortal Trauma</label>
+          <div class="resource-content flexrow flex-center flex-between">
+          <input type="text" name="system.mortaltrauma" value="{{system.mortaltrauma}}" data-dtype="Number"/>
+          <span> / </span>
+          <input type="text" disabled value="{{#maxmortaltrauma}}{{/maxmortaltrauma}}" data-dtype="Number"/>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="resources grid grid-3col">
+
+        <div class="resource flex-group-center">
           <label for="system.shields" class="resource-label">Shields</label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="system.shields" value="{{system.shields}}" data-dtype="Number"/>
           </div>
         </div>
-
+        
         <div class="resource flex-group-center">
-          <label for="system.stress" class="resource-label">Psionic Stress</label>
+          <label for="system.stress" class="resource-label">Psi. Stress</label>
           <div class="resource-content flexrow flex-center flex-between">
           <input type="text" name="system.stress" value="{{system.stress}}" data-dtype="Number"/>
           </div>
         </div>
+        
       </div>
     </div>
   </header>
@@ -102,12 +116,30 @@
         <section class="grid-span-1">
           {{> "systems/stardust/templates/actor/parts/actor-features.html"}}
           {{> "systems/stardust/templates/actor/parts/actor-spells.html"}}
+          <section class="grid grid-10col" style="border: 2px groove #eeede0;">
+            <div class="grid-span-4">
+              <label for="system.shields" class="resource-label">Memory</label>
+              <label>({{numberFormat system.currentMemoryUsed decimals=0}}/{{numberFormat (getPsiMemory) decimals=0}})</label>
+            </div>
+            <div class="grid-span-5">
+              <div style="height: 10px; width: 70%; display:inline-block;">
+                <div style="height: 10px; width: 100%; border: 2px groove #eeede0; display: flex;">
+                  <div style="width: {{#getMemoryPercent}}{{/getMemoryPercent}}%; height: 96%; background-color: #bb2222;">
+                  </div>
+                  <div style="width: {{#invertedMemoryPercent}}{{/invertedMemoryPercent}}%; height: 96%; background-color: #bbbbbb;">
+                  </div>
+                </div>
+              </div>
+              <label>{{numberFormat (getMemoryPercentUnclamped) decimals=0}}%</label>
+            </div>
+          </section>
         </section>
       </section>
+
       <section class="grid grid-10col" style="border: 2px groove #eeede0;">
         <div class="grid-span-2">
           <label for="system.shields" class="resource-label">Bulk</label>
-          {{numberFormat system.currentBulk decimals=0}} / {{numberFormat system.maxBulk decimals=0}} 
+          <label>({{numberFormat system.currentBulk decimals=0}}/{{numberFormat system.maxBulk decimals=0}})</label>
         </div>
         <div class="grid-span-8">
           <div style="height: 10px; width: 90%; display:inline-block;">
@@ -118,7 +150,7 @@
               </div>
             </div>
           </div>
-          <label>{{numberFormat (getBulkPercent) decimals=0}}%</label>
+          <label>{{numberFormat (getBulkPercentUnclamped) decimals=0}}%</label>
         </div>
       </section>
       {{> "systems/stardust/templates/actor/parts/actor-items.html"}}
