@@ -13,3 +13,4 @@
 ## 2.0.1
 - Added default cone template (90°) on system startup
 - Reduced base defense from 8 to 4.
+- Solved an issue where item damage types were not displaying correctly in the item editor.
