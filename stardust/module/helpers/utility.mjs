@@ -111,7 +111,7 @@ export function solveDefenseRoll( actor) {
   {
     skillbonus = " + " + rollLevelToDice(actor.system.currentarmor);
   }
-  var defenseroll = "8" + skillbonus;
+  var defenseroll = "4" + skillbonus;
   return defenseroll
 }
 
