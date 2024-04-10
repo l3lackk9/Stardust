@@ -50,8 +50,8 @@ export class StardustItemSheet extends ItemSheet {
     context.system.damagedata = ""
     context.system.typeisdata = ""
     context.system.traitsdata = ""
-    for (let t in itemData.type) {
-      if(safeNumber(itemData.type[t]) == 1)
+    for (let t in context.system.type) {
+      if(safeNumber(context.system.type[t]) == 1)
       {
         context.system.typeisdata = (game.i18n.localize(CONFIG.STARDUST.translate[t]) ?? t)
       }
