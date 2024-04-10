@@ -2,7 +2,7 @@
   "id": "stardust",
   "title": "Stardust",
   "description": "The Stardust system for FoundryVTT!",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "compatibility": {
     "minimum": 10,
     "verified": "11.307",
