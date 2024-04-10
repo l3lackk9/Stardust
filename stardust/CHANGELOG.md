@@ -12,3 +12,4 @@
 
 ## 2.0.1
 - Added default cone template (90°) on system startup
+- Reduced base defense from 8 to 4.
