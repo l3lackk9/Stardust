@@ -35,6 +35,8 @@ Hooks.once('init', async function() {
     formula: "1d20",
     decimals: 1
   };
+  // Default cone angle
+  CONFIG.MeasuredTemplate.defaults.angle = 90;
 
   // Define custom Document classes
   CONFIG.Actor.documentClass = StardustActor;
