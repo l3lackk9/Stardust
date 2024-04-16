@@ -14,3 +14,6 @@
 - Added default cone template (90°) on system startup
 - Reduced base defense from 8 to 4.
 - Solved an issue where item damage types were not displaying correctly in the item editor.
+
+## 2.0.2
+- Fixed an error where a character's defense displayed the wrong number on their sheet.
