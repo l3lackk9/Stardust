@@ -170,7 +170,7 @@ export class StardustActorSheet extends ActorSheet {
         {
           // assemble a roll based on something's psionics
           dataset.label = item.name + " [" + (game.i18n.localize(CONFIG.STARDUST.translate["psionics"]) ?? "psionics") + "]";
-          dataset.roll = solveSkillRoll( owner, owner.system.skills["psionics"].base, owner.system.skills["psionics"].training)
+          dataset.roll = solveSkillRoll( owner, CONFIG.STARDUST.skillattribute["psionics"], owner.system.skills["psionics"].training)
           if(owner.system.stress > 0)
           {
             // show psionic stress in the roll!
@@ -181,7 +181,7 @@ export class StardustActorSheet extends ActorSheet {
         {
           // assemble a roll based on something's training req
           dataset.label = item.name + " [" + (game.i18n.localize(CONFIG.STARDUST.translate[item.system.skill_req]) ?? item.system.skill_req) + "]";
-          dataset.roll = solveSkillRoll( owner, owner.system.skills[item.system.skill_req].base, owner.system.skills[item.system.skill_req].training)
+          dataset.roll = solveSkillRoll( owner, CONFIG.STARDUST.skillattribute[item.system.skill_req], owner.system.skills[item.system.skill_req].training)
         }
       }
 

@@ -23,87 +23,87 @@
 		"skills": {
 			"acrobatics": {
 				"training": 0,
-				"base": "body"
+				"base": ""
 			},
 			"athletics": {
 				"training": 0,
-				"base": "body"
+				"base": ""
 			},
 			"cqc": {
 				"training": 0,
-				"base": "body"
+				"base": ""
 			},
 			"artillery": {
 				"training": 0,
-				"base": "agility"
+				"base": ""
 			},
 			"firearms": {
 				"training": 0,
-				"base": "agility"
+				"base": ""
 			},
 			"piloting": {
 				"training": 0,
-				"base": "agility"
+				"base": ""
 			},
 			"sleight": {
 				"training": 0,
-				"base": "agility"
+				"base": ""
 			},
 			"stealth": {
 				"training": 0,
-				"base": "agility"
+				"base": ""
 			},
 			"computers": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"culture": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"engineering": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"investigation": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"medicine": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"science": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"insight": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"intimidation": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"perception": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"performance": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"persuasion": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"psionics": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"survival": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			}
 		},
         "biography": ""
@@ -135,87 +135,87 @@
 		"skills": {
 			"acrobatics": {
 				"training": 0,
-				"base": "body"
+				"base": ""
 			},
 			"athletics": {
 				"training": 0,
-				"base": "body"
+				"base": ""
 			},
 			"cqc": {
 				"training": 0,
-				"base": "body"
+				"base": ""
 			},
 			"artillery": {
 				"training": 0,
-				"base": "agility"
+				"base": ""
 			},
 			"firearms": {
 				"training": 0,
-				"base": "agility"
+				"base": ""
 			},
 			"piloting": {
 				"training": 0,
-				"base": "agility"
+				"base": ""
 			},
 			"sleight": {
 				"training": 0,
-				"base": "agility"
+				"base": ""
 			},
 			"stealth": {
 				"training": 0,
-				"base": "agility"
+				"base": ""
 			},
 			"computers": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"culture": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"engineering": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"investigation": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"medicine": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"science": {
 				"training": 0,
-				"base": "mind"
+				"base": ""
 			},
 			"insight": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"intimidation": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"perception": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"performance": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"persuasion": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"psionics": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			},
 			"survival": {
 				"training": 0,
-				"base": "will"
+				"base": ""
 			}
 		}
 	},

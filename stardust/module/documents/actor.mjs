@@ -31,8 +31,10 @@ export class StardustActor extends Actor {
     systemData.attributes.agility = 0
     systemData.attributes.mind = 0
     systemData.attributes.will = 0
-    for (var k in systemData.skills){
+    for (var k in CONFIG.STARDUST.skillattribute){
+      if(!(k in systemData.skills)) systemData.skills[k] = {} // Reinit
       systemData.skills[k].training = 0;
+      systemData.skills[k].base = CONFIG.STARDUST.skillattribute[k] // Reset to config
     }
     systemData.currentBulk = 0
     systemData.maxBulk = 0
@@ -47,7 +49,7 @@ export class StardustActor extends Actor {
             systemData.attributes[k] += safeNumber(i.system.attributes[k]);
           }
         }
-        for (var k in systemData.skills){
+        for (var k in CONFIG.STARDUST.skillattribute){
           if(safeNumber(i.system.skills[k].training) > 0)
           {
             systemData.skills[k].training += safeNumber(i.system.skills[k].training);

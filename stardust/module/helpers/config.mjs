@@ -99,3 +99,27 @@ STARDUST.skilldatalist = {
   "psionics": "psionics",
   "survival": "survival"
 }
+
+STARDUST.skillattribute = {
+  "acrobatics": "body",
+  "athletics": "body",
+  "cqc": "body",
+  "performance": "body",
+  "artillery": "agility",
+  "firearms": "agility",
+  "piloting": "agility",
+  "sleight": "agility",
+  "stealth": "agility",
+  "computers": "mind",
+  "culture": "mind",
+  "engineering": "mind",
+  "investigation": "mind",
+  "medicine": "mind",
+  "science": "mind",
+  "insight": "will",
+  "intimidation": "will",
+  "perception": "will",
+  "persuasion": "will",
+  "psionics": "will",
+  "survival": "will"
+}
