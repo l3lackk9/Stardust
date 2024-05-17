@@ -115,6 +115,12 @@ export class StardustActorSheet extends ActorSheet {
 
     // Rollable abilities.
     function callDisplayRoll(event, owner, psionicsburned) {
+      if(owner.type === "vehicle")
+      {
+        ui.notifications.error("Vehicles cannot use items, copy to pilot for use!");
+        return
+      }
+      
       event.preventDefault();
       const a = event.currentTarget;
       const element = event.currentTarget;

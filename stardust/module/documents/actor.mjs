@@ -23,46 +23,57 @@ export class StardustActor extends Actor {
     const systemData = actorData.system;
     const flags = actorData.flags.stardust || {};
 
-    // prepare item modified data
-    systemData.currentarmor = 0
+    // Do not process vehicles as characters
+    if(actorData.type !== "vehicle")
+    {
+      // prepare item modified data
+      systemData.currentarmor = 0
 
-    // reset stats
-    systemData.attributes.body = 0
-    systemData.attributes.agility = 0
-    systemData.attributes.mind = 0
-    systemData.attributes.will = 0
-    for (var k in CONFIG.STARDUST.skillattribute){
-      if(!(k in systemData.skills)) systemData.skills[k] = {} // Reinit
-      systemData.skills[k].training = 0;
-      systemData.skills[k].base = CONFIG.STARDUST.skillattribute[k] // Reset to config
+      // reset stats
+      systemData.attributes.body = 0
+      systemData.attributes.agility = 0
+      systemData.attributes.mind = 0
+      systemData.attributes.will = 0
+      for (var k in CONFIG.STARDUST.skillattribute){
+        if(!(k in systemData.skills)) systemData.skills[k] = {} // Reinit
+        systemData.skills[k].training = 0;
+        systemData.skills[k].base = CONFIG.STARDUST.skillattribute[k] // Reset to config
+      }
+      
+      systemData.currentMemoryUsed = 0;
     }
     systemData.currentBulk = 0
     systemData.maxBulk = 0
-    systemData.currentMemoryUsed = 0;
 
     // Iterate through items, scan for armor
     for (let i of actorData.items) {
       if (i.type === 'feature') {
-        for (var k in systemData.attributes){
-          if(safeNumber(i.system.attributes[k]) > 0)
-          {
-            systemData.attributes[k] += safeNumber(i.system.attributes[k]);
+        if(actorData.type !== "vehicle")
+        {
+          for (var k in systemData.attributes){
+            if(safeNumber(i.system.attributes[k]) > 0)
+            {
+              systemData.attributes[k] += safeNumber(i.system.attributes[k]);
+            }
           }
-        }
-        for (var k in CONFIG.STARDUST.skillattribute){
-          if(safeNumber(i.system.skills[k].training) > 0)
-          {
-            systemData.skills[k].training += safeNumber(i.system.skills[k].training);
+          for (var k in CONFIG.STARDUST.skillattribute){
+            if(safeNumber(i.system.skills[k].training) > 0)
+            {
+              systemData.skills[k].training += safeNumber(i.system.skills[k].training);
+            }
           }
         }
       }
       else if (i.type === 'item') {
         if(safeNumber(i.system.disabled) == 0)
         {
-          if(safeNumber(i.system.armor) > 0)
+          if(actorData.type !== "vehicle")
           {
-            // scan for armors
-            systemData.currentarmor = Math.max( safeNumber(i.system.armor), systemData.currentarmor)
+            if(safeNumber(i.system.armor) > 0)
+            {
+              // scan for armors
+              systemData.currentarmor = Math.max( safeNumber(i.system.armor), systemData.currentarmor)
+            }
           }
           if(safeNumber(i.system.addedstoragebulk) != 0)
           {
@@ -76,21 +87,32 @@ export class StardustActor extends Actor {
         }
       }
       else if (i.type === 'spell') {
-        // get memory cost of all spells
-        systemData.currentMemoryUsed += safeNumber(i.system.memory);
+        if(actorData.type !== "vehicle")
+        {
+          // get memory cost of all spells
+          systemData.currentMemoryUsed += safeNumber(i.system.memory);
+        }
       }
     }
 
-    // lock minimum attributes
-    for (var k in systemData.attributes){
-      if(safeNumber(systemData.attributes[k]) <= 0)
-      {
-        systemData.attributes[k] = 1
+    if(actorData.type !== "vehicle")
+    {
+      // lock minimum attributes
+      for (var k in systemData.attributes){
+        if(safeNumber(systemData.attributes[k]) <= 0)
+        {
+          systemData.attributes[k] = 1
+        }
       }
-    }
 
-    // bulk control
-    systemData.maxBulk += maxDiceNumber(this.system.attributes["body"])
+      // bulk control
+      systemData.maxBulk += maxDiceNumber(this.system.attributes["body"])
+    }
+    else
+    {
+      // bulk control
+      systemData.maxBulk += maxDiceNumber(this.system.wounddie) * 2
+    }
   }
 
   

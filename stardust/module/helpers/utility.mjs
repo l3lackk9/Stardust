@@ -129,6 +129,12 @@ export function safeNumber( val) {
 
 
 export async function chatCardRoll(rollCast, label, actor, item, token, advNorDis, hasInitButton, grapplestate) {
+  if(actor.type === "vehicle")
+  {
+    ui.notifications.error("Vehicles cannot use items, copy to pilot for use!");
+    return
+  }
+
   // get data, fallback otherwise
   let roll = null;
   if(item != null)

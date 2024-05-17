@@ -1,262 +1,269 @@
 {
-  "Actor": {
-    "types": ["character", "npc"],
-    "templates": {
-      "base": {
-        "wounds": 0,
-		"woundattribute": "body",
-		"mortaltrauma": 0,
-		"currentMemoryUsed": 0,
-		"contamination": 0,
-		"stress": 0,
-		"shields": 0,
-		"saves": {
-			"pass": 0,
-			"fail": 0
-		},
-		"attributes": {
-			"body": 0,
-			"agility": 0,
-			"mind": 0,
-			"will": 0
-		},
-		"skills": {
-			"acrobatics": {
-				"training": 0,
-				"base": ""
-			},
-			"athletics": {
-				"training": 0,
-				"base": ""
-			},
-			"cqc": {
-				"training": 0,
-				"base": ""
-			},
-			"artillery": {
-				"training": 0,
-				"base": ""
-			},
-			"firearms": {
-				"training": 0,
-				"base": ""
-			},
-			"piloting": {
-				"training": 0,
-				"base": ""
-			},
-			"sleight": {
-				"training": 0,
-				"base": ""
-			},
-			"stealth": {
-				"training": 0,
-				"base": ""
-			},
-			"computers": {
-				"training": 0,
-				"base": ""
-			},
-			"culture": {
-				"training": 0,
-				"base": ""
-			},
-			"engineering": {
-				"training": 0,
-				"base": ""
-			},
-			"investigation": {
-				"training": 0,
-				"base": ""
-			},
-			"medicine": {
-				"training": 0,
-				"base": ""
-			},
-			"science": {
-				"training": 0,
-				"base": ""
-			},
-			"insight": {
-				"training": 0,
-				"base": ""
-			},
-			"intimidation": {
-				"training": 0,
-				"base": ""
-			},
-			"perception": {
-				"training": 0,
-				"base": ""
-			},
-			"performance": {
-				"training": 0,
-				"base": ""
-			},
-			"persuasion": {
-				"training": 0,
-				"base": ""
-			},
-			"psionics": {
-				"training": 0,
-				"base": ""
-			},
-			"survival": {
-				"training": 0,
-				"base": ""
+	"Actor": {
+		"types": ["character", "npc", "vehicle"],
+		"templates": {
+			"base": {
+				"wounds": 0,
+				"woundattribute": "body",
+				"mortaltrauma": 0,
+				"currentMemoryUsed": 0,
+				"contamination": 0,
+				"stress": 0,
+				"shields": 0,
+				"saves": {
+					"pass": 0,
+					"fail": 0
+				},
+				"attributes": {
+					"body": 0,
+					"agility": 0,
+					"mind": 0,
+					"will": 0
+				},
+				"skills": {
+					"acrobatics": {
+						"training": 0,
+						"base": ""
+					},
+					"athletics": {
+						"training": 0,
+						"base": ""
+					},
+					"cqc": {
+						"training": 0,
+						"base": ""
+					},
+					"artillery": {
+						"training": 0,
+						"base": ""
+					},
+					"firearms": {
+						"training": 0,
+						"base": ""
+					},
+					"piloting": {
+						"training": 0,
+						"base": ""
+					},
+					"sleight": {
+						"training": 0,
+						"base": ""
+					},
+					"stealth": {
+						"training": 0,
+						"base": ""
+					},
+					"computers": {
+						"training": 0,
+						"base": ""
+					},
+					"culture": {
+						"training": 0,
+						"base": ""
+					},
+					"engineering": {
+						"training": 0,
+						"base": ""
+					},
+					"investigation": {
+						"training": 0,
+						"base": ""
+					},
+					"medicine": {
+						"training": 0,
+						"base": ""
+					},
+					"science": {
+						"training": 0,
+						"base": ""
+					},
+					"insight": {
+						"training": 0,
+						"base": ""
+					},
+					"intimidation": {
+						"training": 0,
+						"base": ""
+					},
+					"perception": {
+						"training": 0,
+						"base": ""
+					},
+					"performance": {
+						"training": 0,
+						"base": ""
+					},
+					"persuasion": {
+						"training": 0,
+						"base": ""
+					},
+					"psionics": {
+						"training": 0,
+						"base": ""
+					},
+					"survival": {
+						"training": 0,
+						"base": ""
+					}
+				},
+				"biography": ""
 			}
 		},
-        "biography": ""
-      }
-    },
-    "character": {
-      "templates": ["base"]
-    },
-    "npc": {
-      "templates": ["base"]
-    }
-  },
-  "Item": {
-    "types": ["feature","item","spell"],
-    "templates": {
-      "base": {
-        "description": "",
-		"damage": 0,
-		"range": 0
-      }
-    },
-    "feature": {
-		"attributes": {
-			"body": "0",
-			"agility": "0",
-			"mind": "0",
-			"will": "0"
+		"character": {
+			"templates": ["base"]
 		},
-		"skills": {
-			"acrobatics": {
-				"training": 0,
-				"base": ""
-			},
-			"athletics": {
-				"training": 0,
-				"base": ""
-			},
-			"cqc": {
-				"training": 0,
-				"base": ""
-			},
-			"artillery": {
-				"training": 0,
-				"base": ""
-			},
-			"firearms": {
-				"training": 0,
-				"base": ""
-			},
-			"piloting": {
-				"training": 0,
-				"base": ""
-			},
-			"sleight": {
-				"training": 0,
-				"base": ""
-			},
-			"stealth": {
-				"training": 0,
-				"base": ""
-			},
-			"computers": {
-				"training": 0,
-				"base": ""
-			},
-			"culture": {
-				"training": 0,
-				"base": ""
-			},
-			"engineering": {
-				"training": 0,
-				"base": ""
-			},
-			"investigation": {
-				"training": 0,
-				"base": ""
-			},
-			"medicine": {
-				"training": 0,
-				"base": ""
-			},
-			"science": {
-				"training": 0,
-				"base": ""
-			},
-			"insight": {
-				"training": 0,
-				"base": ""
-			},
-			"intimidation": {
-				"training": 0,
-				"base": ""
-			},
-			"perception": {
-				"training": 0,
-				"base": ""
-			},
-			"performance": {
-				"training": 0,
-				"base": ""
-			},
-			"persuasion": {
-				"training": 0,
-				"base": ""
-			},
-			"psionics": {
-				"training": 0,
-				"base": ""
-			},
-			"survival": {
-				"training": 0,
-				"base": ""
-			}
+		"npc": {
+			"templates": ["base"]
+		},
+		"vehicle": {
+			"wounddie": 0,
+			"wounds": 0,
+			"speed": 0
 		}
 	},
-    "item": {
-      "templates": ["base"],
-	  "disabled": 0,
-	  "skill_req": "none",
-	  "range": 0,
-	  "armor": 0,
-	  "type": {
-		"blunt": 0,
-		"slash": 0,
-		"pierce": 0,
-		"acid": 0,
-		"cold": 0,
-		"electricity": 0,
-		"heat": 0
-	  },
-	  "traits": {
-		"light": 0,
-		"heavy": 0,
-		"twohand": 0,
-		"trip": 0,
-		"brace": 0,
-		"reach": 0
-	  },
-      "bulk": 1,
-	  "addedstoragebulk": 0
-    },
-    "spell": {
-      "templates": ["base"],
-	  "memory": 1,
-	  "type": {
-		"blunt": 0,
-		"slash": 0,
-		"pierce": 0,
-		"acid": 0,
-		"cold": 0,
-		"electricity": 0,
-		"heat": 0
-	  }
-    }
-  }
+	"Item": {
+		"types": ["feature","item","spell"],
+		"templates": {
+			"base": {
+				"description": "",
+				"damage": 0,
+				"range": 0
+			}
+		},
+		"feature": {
+			"attributes": {
+				"body": "0",
+				"agility": "0",
+				"mind": "0",
+				"will": "0"
+			},
+			"skills": {
+				"acrobatics": {
+					"training": 0,
+					"base": ""
+				},
+				"athletics": {
+					"training": 0,
+					"base": ""
+				},
+				"cqc": {
+					"training": 0,
+					"base": ""
+				},
+				"artillery": {
+					"training": 0,
+					"base": ""
+				},
+				"firearms": {
+					"training": 0,
+					"base": ""
+				},
+				"piloting": {
+					"training": 0,
+					"base": ""
+				},
+				"sleight": {
+					"training": 0,
+					"base": ""
+				},
+				"stealth": {
+					"training": 0,
+					"base": ""
+				},
+				"computers": {
+					"training": 0,
+					"base": ""
+				},
+				"culture": {
+					"training": 0,
+					"base": ""
+				},
+				"engineering": {
+					"training": 0,
+					"base": ""
+				},
+				"investigation": {
+					"training": 0,
+					"base": ""
+				},
+				"medicine": {
+					"training": 0,
+					"base": ""
+				},
+				"science": {
+					"training": 0,
+					"base": ""
+				},
+				"insight": {
+					"training": 0,
+					"base": ""
+				},
+				"intimidation": {
+					"training": 0,
+					"base": ""
+				},
+				"perception": {
+					"training": 0,
+					"base": ""
+				},
+				"performance": {
+					"training": 0,
+					"base": ""
+				},
+				"persuasion": {
+					"training": 0,
+					"base": ""
+				},
+				"psionics": {
+					"training": 0,
+					"base": ""
+				},
+				"survival": {
+					"training": 0,
+					"base": ""
+				}
+			}
+		},
+		"item": {
+			"templates": ["base"],
+			"disabled": 0,
+			"skill_req": "none",
+			"range": 0,
+			"armor": 0,
+			"type": {
+				"blunt": 0,
+				"slash": 0,
+				"pierce": 0,
+				"acid": 0,
+				"cold": 0,
+				"electricity": 0,
+				"heat": 0
+			},
+			"traits": {
+				"light": 0,
+				"heavy": 0,
+				"twohand": 0,
+				"trip": 0,
+				"brace": 0,
+				"reach": 0,
+				"reload": 0,
+				"charge": 0
+			},
+			"bulk": 1,
+			"addedstoragebulk": 0
+		},
+		"spell": {
+			"templates": ["base"],
+			"memory": 1,
+			"type": {
+				"blunt": 0,
+				"slash": 0,
+				"pierce": 0,
+				"acid": 0,
+				"cold": 0,
+				"electricity": 0,
+				"heat": 0
+			}
+		}
+	}
 }

@@ -172,7 +172,22 @@ Handlebars.registerHelper('rolldefense', function() {
 });
 
 Handlebars.registerHelper('maxwounds', function() {
+  if(this.actor.type == "vehicle")
+    return maxDiceNumber(this.actor.system.wounddie)
   return maxDiceNumber(this.actor.system.attributes[this.actor.system.woundattribute]) - safeNumber(this.actor.system.contamination)
+});
+
+Handlebars.registerHelper('shipspeed', function(val) {
+  if(this.actor.type === "vehicle")
+    if(val == 0) // Slow
+      return (maxDiceNumber(this.actor.system.speed) * 5) + "ft"
+    if(val == 1) // Normal
+      return (maxDiceNumber(this.actor.system.speed) * 10) + "ft"
+    if(val == 2) // Dash
+      return (maxDiceNumber(this.actor.system.speed) * 20) + "ft"
+    if(val == 3) // Desync
+      return (maxDiceNumber(this.actor.system.speed) * 40) + "ft"
+  return "?"
 });
 
 Handlebars.registerHelper('maxmortaltrauma', function() {
