@@ -163,8 +163,8 @@ Handlebars.registerHelper('initiativeImages', function( agility, mind) {
 
 Handlebars.registerHelper('defenseImage', function() {
   if(safeNumber(this.actor.system.currentarmor) == 0)
-    return "8"
-  return "8 + <div class=\"" + rollLevelImagePath( safeNumber(this.actor.system.currentarmor) ) + "\"></div>"
+    return "4"
+  return "4 + <div class=\"" + rollLevelImagePath( safeNumber(this.actor.system.currentarmor) ) + "\"></div>"
 });
 
 Handlebars.registerHelper('rolldefense', function() {

@@ -71,11 +71,44 @@ export class StardustItemSheet extends ItemSheet {
       }
     }
 
+    if(safeNumber(itemData.system.armor) > 0)
+    {
+      var armor_set = ""
+      switch(safeNumber(itemData.system.armor))
+      {
+        case 1:
+          armor_set = "Light (d4)"
+        break;
+        case 2:
+          armor_set = "Medium (d6)"
+        break;
+        case 3:
+          armor_set = "Heavy (d8)"
+        break;
+        case 4:
+          armor_set = "Reinforced (d10)"
+        break;
+        case 5:
+          armor_set = "Advanced (d12)"
+        break;
+        case 6:
+          armor_set = "Exotic (d20)"
+        break;
+      }
+
+      context.system.traitsdata = "Armor: " + armor_set;
+    }
+    
+    if(safeNumber(itemData.system.memory) > 0)
+    {
+      context.system.traitsdata = "Memory Cost: " + safeNumber(itemData.system.memory);
+    }
+
     if(safeNumber(itemData.system.damage) > 0)
     {
       context.system.damagedata = "Damage: " + safeNumber(itemData.system.damage) + " [" + context.system.typeisdata + "]";
     }
-
+    
     return context;
   }
 

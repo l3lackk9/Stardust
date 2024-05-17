@@ -79,6 +79,14 @@ export class StardustActor extends Actor {
       }
     }
 
+    // lock minimum attributes
+    for (var k in systemData.attributes){
+      if(safeNumber(systemData.attributes[k]) <= 0)
+      {
+        systemData.attributes[k] = 1
+      }
+    }
+
     // bulk control
     systemData.maxBulk += maxDiceNumber(this.system.attributes["body"])
   }
