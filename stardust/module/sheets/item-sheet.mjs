@@ -119,6 +119,12 @@ export class StardustItemSheet extends ItemSheet {
       }
 
       context.system.traitsdata = "Armor: " + armor_set;
+
+      // Wound reduction type
+      if(context.system.typeisdata != "")
+      {
+        context.system.traitsdata += "[" + context.system.typeisdata + "]"
+      }
     }
     
     if(safeNumber(itemData.system.memory) > 0)
