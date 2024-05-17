@@ -17,3 +17,9 @@
 
 ## 2.0.2
 - Fixed an error where a character's defense displayed the wrong number on their sheet.
+
+## 2.0.3
+- Made several traits appear in header of items to clarify armor and features
+- Fixed error where having no attribute modifying features would result in nan on the character sheet
+- Show a symbol on set trainings in the attribute section of feats, for clarity while editing
+- vehicle actor type with several stats and some basic rules
