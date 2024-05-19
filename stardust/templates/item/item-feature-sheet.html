@@ -36,7 +36,7 @@
           <section class="grid grid-3col">
             {{#each system.skills as |skill key|}}
             <div style="border: 2px groove #eeede0; background-color: {{#getattributecolor skill.base}}{{/getattributecolor}};">
-              <label class="resource-label">{{#localizestardust key}}{{/localizestardust}}<br>Training</label></br>
+              <label class="resource-label">{{#localizestardust key}}{{/localizestardust}}<br>Training {{#skillTrainingImages ../this base training}}{{/skillTrainingImages}}</label></br>
               {{{dropdown (gettrainingindexs) skill.training "system.skills." key ".training"}}}
             </div>
             {{/each}}

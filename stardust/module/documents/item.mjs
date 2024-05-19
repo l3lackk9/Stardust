@@ -10,6 +10,17 @@ export class StardustItem extends Item {
     // As with the actor class, items are documents that can have their data
     // preparation methods overridden (such as prepareBaseData()).
     super.prepareData();
+
+    if (this.type === 'feature') {
+      for (var k in CONFIG.STARDUST.skillattribute){
+        if(!(k in this.system.skills)) 
+        {
+          this.system.skills[k] = {} // Reinit
+          this.system.skills[k].training = 0;
+        }
+        this.system.skills[k].base = CONFIG.STARDUST.skillattribute[k] // Reset to config
+      }
+    }
   }
 
   /**

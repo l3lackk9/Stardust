@@ -46,6 +46,28 @@ export class StardustItemSheet extends ItemSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = itemData.system;
     context.flags = itemData.flags;
+    
+    if (itemData.type === "feature") {
+      // dumb caching
+      var original_list = {}
+      for (let t in CONFIG.STARDUST.skillattribute) {
+        original_list[t] = {}
+        if(t in context.system.skills)
+        {
+          original_list[t].training = context.system.skills[t].training
+        }
+        else
+        {
+          original_list[t].training = 0
+        }
+      }
+      context.system.skills = {}
+      for (let t in CONFIG.STARDUST.skillattribute) {
+        context.system.skills[t] = {}
+        context.system.skills[t].training = original_list[t].training
+        context.system.skills[t].base     = CONFIG.STARDUST.skillattribute[t]
+      }
+    }
 
     context.system.damagedata = ""
     context.system.typeisdata = ""
@@ -71,11 +93,50 @@ export class StardustItemSheet extends ItemSheet {
       }
     }
 
+    if(safeNumber(itemData.system.armor) > 0)
+    {
+      var armor_set = ""
+      switch(safeNumber(itemData.system.armor))
+      {
+        case 1:
+          armor_set = "Light (d4)"
+        break;
+        case 2:
+          armor_set = "Medium (d6)"
+        break;
+        case 3:
+          armor_set = "Heavy (d8)"
+        break;
+        case 4:
+          armor_set = "Reinforced (d10)"
+        break;
+        case 5:
+          armor_set = "Advanced (d12)"
+        break;
+        case 6:
+          armor_set = "Exotic (d20)"
+        break;
+      }
+
+      context.system.traitsdata = "Armor: " + armor_set;
+
+      // Wound reduction type
+      if(context.system.typeisdata != "")
+      {
+        context.system.traitsdata += "[" + context.system.typeisdata + "]"
+      }
+    }
+    
+    if(safeNumber(itemData.system.memory) > 0)
+    {
+      context.system.traitsdata = "Memory Cost: " + safeNumber(itemData.system.memory);
+    }
+
     if(safeNumber(itemData.system.damage) > 0)
     {
       context.system.damagedata = "Damage: " + safeNumber(itemData.system.damage) + " [" + context.system.typeisdata + "]";
     }
-
+    
     return context;
   }
 

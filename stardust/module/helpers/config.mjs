@@ -33,10 +33,12 @@ STARDUST.translate = {
   "survival": "STARDUST.SkillSurvival",
   "light": "STARDUST.SkillLight",
   "heavy": "STARDUST.SkillHeavy",
-  "twohanded": "STARDUST.SkillTwoHanded",
+  "twohand": "STARDUST.SkillTwoHanded",
   "trip": "STARDUST.SkillTrip",
   "brace": "STARDUST.SkillBrace",
   "reach": "STARDUST.SkillReach",
+  "charge": "STARDUST.SkillCharge",
+  "reload": "STARDUST.SkillReload",
   "blunt": "STARDUST.SkillBlunt",
   "slash":  "STARDUST.SkillSlash",
   "pierce": "STARDUST.SkillPierce",
@@ -98,4 +100,28 @@ STARDUST.skilldatalist = {
   "persuasion": "persuasion",
   "psionics": "psionics",
   "survival": "survival"
+}
+
+STARDUST.skillattribute = {
+  "acrobatics": "body",
+  "athletics": "body",
+  "cqc": "body",
+  "performance": "body",
+  "artillery": "agility",
+  "firearms": "agility",
+  "piloting": "agility",
+  "sleight": "agility",
+  "stealth": "agility",
+  "computers": "mind",
+  "culture": "mind",
+  "engineering": "mind",
+  "investigation": "mind",
+  "medicine": "mind",
+  "science": "mind",
+  "insight": "will",
+  "intimidation": "will",
+  "perception": "will",
+  "persuasion": "will",
+  "psionics": "will",
+  "survival": "will"
 }
