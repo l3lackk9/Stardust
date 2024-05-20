@@ -1,4 +1,4 @@
-import { safeNumber,maxDiceNumber } from "../helpers/utility.mjs";
+import { rollLevelToDice,safeNumber,maxDiceNumber } from "../helpers/utility.mjs";
 
 /**
  * Extend the base Actor document by defining a custom roll data structure which is ideal for the Simple system.
@@ -142,6 +142,11 @@ export class StardustActor extends Actor {
   getRollData() {
     const data = super.getRollData();
 
+    if (data.attributes) {
+      for (let [k, v] of Object.entries(data.attributes)) {
+        data[k] = rollLevelToDice( foundry.utils.deepClone(v) ) + "["+ (game.i18n.localize(CONFIG.STARDUST.translate[k]) ?? k) +"]";
+      }
+    }
 
     return data;
   }

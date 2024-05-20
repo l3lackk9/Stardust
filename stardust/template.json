@@ -226,7 +226,7 @@
 		},
 		"item": {
 			"templates": ["base"],
-			"disabled": 0,
+			"disabled": 1,
 			"skill_req": "none",
 			"range": 0,
 			"armor": 0,
@@ -240,17 +240,18 @@
 				"heat": 0
 			},
 			"traits": {
-				"light": 0,
-				"heavy": 0,
+				"small": 0,
+				"consumable": 0,
+				"implant": 0,
 				"twohand": 0,
-				"trip": 0,
-				"brace": 0,
-				"reach": 0,
+				"physical": 0,
+				"energy": 0,
 				"reload": 0,
 				"charge": 0
 			},
 			"bulk": 1,
-			"addedstoragebulk": 0
+			"addedstoragebulk": 0,
+			"price": 0
 		},
 		"spell": {
 			"templates": ["base"],
