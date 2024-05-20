@@ -23,3 +23,10 @@
 - Fixed error where having no attribute modifying features would result in nan on the character sheet
 - Show a symbol on set trainings in the attribute section of feats, for clarity while editing
 - vehicle actor type with several stats and some basic rules
+
+## 2.0.4
+- Reworked several tags for better gameplay flow
+- Item price field
+- Attributes accessible to inline rolls
+- Initiative uses proper formula when rolled by foundry
+- Made item property cleanup/debug a togglable flag
