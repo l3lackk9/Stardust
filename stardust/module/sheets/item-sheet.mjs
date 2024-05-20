@@ -46,29 +46,6 @@ export class StardustItemSheet extends ItemSheet {
     // Add the actor's data to context.data for easier access, as well as flags.
     context.system = itemData.system;
     context.flags = itemData.flags;
-    
-    if (itemData.type === "feature") {
-      // dumb caching
-      var original_list = {}
-      for (let t in CONFIG.STARDUST.skillattribute) {
-        original_list[t] = {}
-        if(t in context.system.skills)
-        {
-          original_list[t].training = context.system.skills[t].training
-        }
-        else
-        {
-          original_list[t].training = 0
-        }
-      }
-      context.system.skills = {}
-      for (let t in CONFIG.STARDUST.skillattribute) {
-        context.system.skills[t] = {}
-        context.system.skills[t].training = original_list[t].training
-        context.system.skills[t].base     = CONFIG.STARDUST.skillattribute[t]
-      }
-    }
-
     context.system.damagedata = ""
     context.system.typeisdata = ""
     context.system.traitsdata = ""

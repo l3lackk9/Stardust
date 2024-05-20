@@ -11,14 +11,47 @@ export class StardustItem extends Item {
     // preparation methods overridden (such as prepareBaseData()).
     super.prepareData();
 
-    if (this.type === 'feature') {
-      for (var k in CONFIG.STARDUST.skillattribute){
-        if(!(k in this.system.skills)) 
-        {
-          this.system.skills[k] = {} // Reinit
-          this.system.skills[k].training = 0;
+    // Rebuild from configuration lists
+    if(CONFIG.STARDUST.debug_cleandata)
+    {
+      if (this.type === 'feature') {
+        var original_list = {}
+        for (let t in CONFIG.STARDUST.skillattribute) {
+          original_list[t] = {}
+          if(t in this.system.skills)
+          {
+            original_list[t].training = this.system.skills[t].training
+          }
+          else
+          {
+            original_list[t].training = 0
+          }
         }
-        this.system.skills[k].base = CONFIG.STARDUST.skillattribute[k] // Reset to config
+        this.system.skills = {}
+        for (let t in CONFIG.STARDUST.skillattribute) {
+          this.system.skills[t] = {}
+          this.system.skills[t].training = original_list[t].training
+          this.system.skills[t].base     = CONFIG.STARDUST.skillattribute[t]
+        }
+      }
+      else if (this.type === 'item') {
+        var original_list = {}
+        for (let t in CONFIG.STARDUST.itemtraits) {
+          var index = CONFIG.STARDUST.itemtraits[t]
+          if(index in this.system.traits)
+          {
+            original_list[index] = this.system.traits[index]
+          }
+          else
+          {
+            original_list[index] = 0
+          }
+        }
+        this.system.traits = {}
+        for (let t in CONFIG.STARDUST.itemtraits) {
+          var index = CONFIG.STARDUST.itemtraits[t]
+          this.system.traits[index] = original_list[index]
+        }
       }
     }
   }
