@@ -244,6 +244,8 @@
 				"consumable": 0,
 				"implant": 0,
 				"twohand": 0,
+				"physical": 0,
+				"energy": 0,
 				"reload": 0,
 				"charge": 0
 			},

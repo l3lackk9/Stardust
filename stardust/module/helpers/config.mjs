@@ -35,6 +35,8 @@ STARDUST.translate = {
   "consumable":   "STARDUST.TraitConsumable",
   "implant":      "STARDUST.TraitImplant",
   "twohand":      "STARDUST.TraitTwoHanded",
+  "physical":     "STARDUST.TraitPhysical",
+  "energy":       "STARDUST.TraitEnergy",
   "reload":       "STARDUST.TraitReload",
   "charge":       "STARDUST.TraitCharge",
   "blunt":        "STARDUST.AttackBlunt",
@@ -135,6 +137,8 @@ STARDUST.itemtraits = [
   "consumable",
   "implant",
   "twohand",
+  "physical",
+  "energy",
   "reload",
   "charge"
 ]

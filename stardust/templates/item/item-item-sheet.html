@@ -6,8 +6,16 @@
       <h3 class="charname">{{#if (overZero item.system.range)}}Range: {{item.system.range}}ft {{/if}}{{system.damagedata}}<br>{{system.traitsdata}}</h3>
       
       <div class="resource">
-        <label class="resource-label">Quantity</label>
-        <input type="text" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"/>
+        <div class="properties grid grid-2col">
+          <div>
+            <label class="resource-label">Quantity</label>
+            <input type="text" name="system.quantity" value="{{system.quantity}}" data-dtype="Number"/>
+          </div>
+          <div>
+            <label class="resource-label">Price</label>
+            <input type="text" name="system.price" value="{{system.price}}" data-dtype="Number"/>
+          </div>
+        </div>
       </div>
     </div>
   </header>

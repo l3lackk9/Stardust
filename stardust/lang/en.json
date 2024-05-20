@@ -29,6 +29,8 @@
   "STARDUST.TraitConsumable":   "Consumable",
   "STARDUST.TraitImplant":      "Implant",
   "STARDUST.TraitTwoHanded":    "Two Handed",
+  "STARDUST.TraitPhysical":     "Physical",
+  "STARDUST.TraitEnergy":       "Energy",
   "STARDUST.TraitReload":       "Reload",
   "STARDUST.TraitCharge":       "Charge",
   "STARDUST.AttackBlunt":        "Blunt",
