@@ -7,6 +7,21 @@ import { rollLevelToDice,safeNumber,maxDiceNumber } from "../helpers/utility.mjs
 export class StardustActor extends Actor {
 
   /** @override */
+  async _preCreate(data, options, user) {
+    await super._preCreate(data, options, user);
+    var updates = {};
+    updates.system = {};
+    
+    if(this.type === "character")
+    {
+      // init linkage
+      updates.prototypeToken = {};
+      updates.prototypeToken.actorLink = true;
+    }
+    this.updateSource(updates);
+  }
+
+  /** @override */
   prepareData() {
     // Prepare data for the actor. Calling the super version of this executes
     // the following, in order: data reset (to clear active effects),
