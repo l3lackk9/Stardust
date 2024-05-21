@@ -246,6 +246,8 @@
 				"twohand": 0,
 				"physical": 0,
 				"energy": 0,
+				"firecone": 0,
+				"penetrate": 0,
 				"reload": 0,
 				"charge": 0
 			},

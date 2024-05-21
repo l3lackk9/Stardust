@@ -37,6 +37,8 @@ STARDUST.translate = {
   "twohand":      "STARDUST.TraitTwoHanded",
   "physical":     "STARDUST.TraitPhysical",
   "energy":       "STARDUST.TraitEnergy",
+  "firecone":     "STARDUST.TraitFireCone",
+  "penetrate":    "STARDUST.TraitPenetrate",
   "reload":       "STARDUST.TraitReload",
   "charge":       "STARDUST.TraitCharge",
   "blunt":        "STARDUST.AttackBlunt",
@@ -55,7 +57,8 @@ STARDUST.dicetoindex = {
   "1d8": 3,
   "1d10": 4,
   "1d12": 5,
-  "1d20": 6
+  "1d20": 6,
+  "1d100": 7
 };
 
 STARDUST.trainingtoindex = {
@@ -65,7 +68,8 @@ STARDUST.trainingtoindex = {
   "profession": 3,
   "master": 4,
   "legendary": 5,
-  "mythic": 6
+  "mythic": 6,
+  "nightmare": 7
 };
 
 
@@ -138,6 +142,8 @@ STARDUST.itemtraits = [
   "implant",
   "twohand",
   "physical",
+  "firecone",
+  "penetrate",
   "energy",
   "reload",
   "charge"

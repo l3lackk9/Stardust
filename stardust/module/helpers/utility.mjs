@@ -18,8 +18,11 @@ export function rollLevelToDice(val) {
 
     case 5:
       return "d12"
+      
+    case 6:
+      return "d20"
   }
-  return "d20"
+  return "d100"
 }
 
 export function rollLevelToTraining(val) {
@@ -42,8 +45,11 @@ export function rollLevelToTraining(val) {
 
     case 5:
       return "Legendary"
+
+    case 6:
+      return "Mythic"
   }
-  return "Mythic"
+  return "Nightmare"
 }
 
 export function rollLevelImagePath(val) {
@@ -66,8 +72,11 @@ export function rollLevelImagePath(val) {
 
     case 5:
       return "fas fa-dice-d12"
+      
+    case 6:
+      return "fas fa-dice-d20"
   }
-  return "fas fa-dice-d20"
+  return "fas fa-skull"
 }
 
 export function maxDiceNumber(val) {
@@ -90,8 +99,11 @@ export function maxDiceNumber(val) {
 
     case 5:
       return 12
+      
+    case 6:
+      return 20
   }
-  return 20
+  return 100
 }
 
 export function solveSkillRoll( actor, baseskill, trainingval) {
