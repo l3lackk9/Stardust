@@ -1,9 +1,7 @@
 export const STARDUST = {};
 
-/**
- * The set of Ability Scores used within the sytem.
- * @type {Object}
- */
+STARDUST.maxmortalwounds = 3
+
 STARDUST.translate = {
   "body":         "STARDUST.AttributeBody",
   "agility":      "STARDUST.AttributeAgility",
@@ -47,7 +45,18 @@ STARDUST.translate = {
   "acid":         "STARDUST.AttackAcid",
   "cold":         "STARDUST.AttackCold",
   "electricity":  "STARDUST.AttackElec",
-  "heat":         "STARDUST.AttackHeat"
+  "heat":         "STARDUST.AttackHeat",
+
+  "self":             "STARDUST.TargetSelf",
+  "other":            "STARDUST.TargetOther",
+  "object":           "STARDUST.TargetObject",
+  "creature":         "STARDUST.TargetCreature",
+  "living_creature":  "STARDUST.TargetLivingCreature",
+  "machine_creature": "STARDUST.TargetMachineCreature",
+
+  "augmentation":     "STARDUST.DisciplineAugmentation",
+  "manipulation":     "STARDUST.DisciplineManipulation",
+  "projection":       "STARDUST.DisciplineProjection"
 };
 
 STARDUST.dicetoindex = {
@@ -72,6 +81,13 @@ STARDUST.trainingtoindex = {
   "nightmare": 7
 };
 
+STARDUST.attributes = {
+  "none": "none",
+  "body": "body",
+  "agility": "agility",
+  "mind": "mind",
+  "will": "will"
+};
 
 STARDUST.attributecolor = {
   "body": "#e1723a",
@@ -105,6 +121,25 @@ STARDUST.skilldatalist = {
   "persuasion": "persuasion",
   "psionics": "psionics",
   "survival": "survival"
+}
+
+// for dropdowns
+// Keep template up to date
+STARDUST.disciplinesdatalist = {
+  "augmentation": "augmentation",
+  "manipulation": "manipulation",
+  "projection": "projection"
+}
+
+// for dropdowns
+// Keep template up to date
+STARDUST.targetdatalist = {
+  "self": "self",
+  "other": "other",
+  "object": "object",
+  "creature": "creature",
+  "living_creature": "living_creature",
+  "machine_creature": "machine_creature"
 }
 
 // If items and actors clean their data with the following lists

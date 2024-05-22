@@ -79,6 +79,10 @@ Handlebars.registerHelper('notNull', function(val) {
   return val != null;
 });
 
+Handlebars.registerHelper('notEmpty', function(val) {
+  return val != null && val != "" && val != 0;
+});
+
 Handlebars.registerHelper('notZero', function(val) {
   val = safeNumber(val);
   return parseFloat(val) != 0;
@@ -180,18 +184,18 @@ Handlebars.registerHelper('maxwounds', function() {
 Handlebars.registerHelper('shipspeed', function(val) {
   if(this.actor.type === "vehicle")
     if(val == 0) // Slow
-      return (maxDiceNumber(this.actor.system.speed) * 5) + "ft"
+      return (maxDiceNumber(this.actor.system.speed) * 1) + "u"
     if(val == 1) // Normal
-      return (maxDiceNumber(this.actor.system.speed) * 10) + "ft"
+      return (maxDiceNumber(this.actor.system.speed) * 2) + "u"
     if(val == 2) // Dash
-      return (maxDiceNumber(this.actor.system.speed) * 20) + "ft"
+      return (maxDiceNumber(this.actor.system.speed) * 4) + "u"
     if(val == 3) // Desync
-      return (maxDiceNumber(this.actor.system.speed) * 40) + "ft"
+      return (maxDiceNumber(this.actor.system.speed) * 8) + "u"
   return "?"
 });
 
 Handlebars.registerHelper('maxmortaltrauma', function() {
-  return 3; // Hardcoded naughtyness - can fix later if this ever needs to be configured
+  return CONFIG.STARDUST.maxmortalwounds; // Hardcoded naughtyness - can fix later if this ever needs to be configured
 });
 
 Handlebars.registerHelper('getdiceindexes', function() {
@@ -206,12 +210,24 @@ Handlebars.registerHelper('getskilllist', function() {
   return CONFIG.STARDUST.skilldatalist
 });
 
+Handlebars.registerHelper('gettargets', function() {
+  return CONFIG.STARDUST.targetdatalist
+});
+
+Handlebars.registerHelper('getdisciplines', function() {
+  return CONFIG.STARDUST.disciplinesdatalist
+});
+
+Handlebars.registerHelper('getattributes', function(val) {
+  return CONFIG.STARDUST.attributes
+});
+
 Handlebars.registerHelper('getattributecolor', function(val) {
   return CONFIG.STARDUST.attributecolor[val]
 });
 
 Handlebars.registerHelper('getSpeed', function() {
-  return (maxDiceNumber(this.system.attributes["agility"]) * 5) + "ft"
+  return (maxDiceNumber(this.system.attributes["agility"])) + "u"
 });
 
 Handlebars.registerHelper('getPsiMemory', function() {

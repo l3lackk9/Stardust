@@ -258,6 +258,11 @@
 		"spell": {
 			"templates": ["base"],
 			"memory": 1,
+			"discipline": "augmentation",
+			"target": "self",
+			"duration" : "",
+			"save": "none",
+			"dc": 4,
 			"type": {
 				"blunt": 0,
 				"slash": 0,
