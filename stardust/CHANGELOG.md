@@ -34,3 +34,5 @@
 ## 2.0.5
 - Added proper support for psionic stats in their item sheet
 - Moved all distances to units instead of ft
+- Penetration flag for weapons that line fire
+- nightmare dice size (d100) for boss creatures or ships
