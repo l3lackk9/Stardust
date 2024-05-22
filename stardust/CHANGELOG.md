@@ -30,3 +30,7 @@
 - Attributes accessible to inline rolls
 - Initiative uses proper formula when rolled by foundry
 - Made item property cleanup/debug a togglable flag
+
+## 2.0.5
+- Added proper support for psionic stats in their item sheet
+- Moved all distances to units instead of ft
