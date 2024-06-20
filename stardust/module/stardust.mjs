@@ -234,6 +234,10 @@ Handlebars.registerHelper('getPsiMemory', function() {
   return maxDiceNumber(this.system.attributes["mind"])
 });
 
+Handlebars.registerHelper('getDieMax', function(val) {
+  return maxDiceNumber(val)
+});
+
 Handlebars.registerHelper('getBulkTotal', function() {
   return safeNumber(this.system.bulk) * safeNumber(this.system.quantity)
 });
