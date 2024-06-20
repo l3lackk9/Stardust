@@ -96,10 +96,8 @@ export class StardustActor extends Actor {
             systemData.maxBulk +=safeNumber(i.system.addedstoragebulk)
           }
         }
-        else
-        {
-          systemData.currentBulk += safeNumber(i.system.bulk) * safeNumber(i.system.quantity)
-        }
+        // Items always weigh you down...
+        systemData.currentBulk += safeNumber(i.system.bulk) * safeNumber(i.system.quantity)
       }
       else if (i.type === 'spell') {
         if(actorData.type !== "vehicle")
