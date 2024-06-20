@@ -165,14 +165,14 @@ Handlebars.registerHelper('initiativeImages', function( agility, mind) {
   return "<div class=\"" + rollLevelImagePath(agility) + "\"></div> + <div class=\"" + rollLevelImagePath(mind) + "\"></div>"
 });
 
-Handlebars.registerHelper('defenseImage', function() {
-  if(safeNumber(this.actor.system.currentarmor) == 0)
-    return "4"
-  return "4 + <div class=\"" + rollLevelImagePath( safeNumber(this.actor.system.currentarmor) ) + "\"></div>"
+Handlebars.registerHelper('defenseText', function() {
+  var skillbonus = 0;
+  if(rollLevelToDice(this.actor.system.currentarmor) != "0") skillbonus = (maxDiceNumber(this.actor.system.currentarmor) / 2);
+  return "[" + (2 + skillbonus) + "]<div class=\"" + rollLevelImagePath( safeNumber(this.actor.system.currentarmor) ) + "\"></div>";
 });
 
 Handlebars.registerHelper('rolldefense', function() {
-  return solveDefenseRoll( this.actor)
+  return solveDefenseRoll( this.actor);
 });
 
 Handlebars.registerHelper('maxwounds', function() {

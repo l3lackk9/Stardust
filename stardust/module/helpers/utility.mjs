@@ -121,9 +121,9 @@ export function solveDefenseRoll( actor) {
   var skillbonus = "";
   if(rollLevelToDice(actor.system.currentarmor) != "0")
   {
-    skillbonus = " + " + rollLevelToDice(actor.system.currentarmor);
+    skillbonus = " + " + (maxDiceNumber(actor.system.currentarmor) / 2);
   }
-  var defenseroll = "4" + skillbonus;
+  var defenseroll = "2" + skillbonus;
   return defenseroll
 }
 
