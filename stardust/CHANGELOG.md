@@ -36,3 +36,7 @@
 - Moved all distances to units instead of ft
 - Penetration flag for weapons that line fire
 - nightmare dice size (d100) for boss creatures or ships
+
+## 2.0.6
+- Altered defense calculation from dice max addition, to 4 + (half dice max of armor)
+- Passive attribute skills in place of passives for each skill
