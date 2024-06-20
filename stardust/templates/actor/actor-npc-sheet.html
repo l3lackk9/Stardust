@@ -82,7 +82,7 @@
               {{!-- MAIN ATTRIBUTE --}}
               <div class="ability flex-group-center" title="[{{#rollTraining attribute}}{{/rollTraining}}] {{#rollLevel attribute}}{{/rollLevel}}" style="width: 100%; height: 100%;background-color: {{#getattributecolor key_att}}{{/getattributecolor}};">
                 <label class="ability-mod rollable {{#rollImage (attribute)}}{{/rollImage}} fa-4x" data-roll="{{#rollLevel attribute}}{{/rollLevel}}" data-label="{{#localizestardust key_att}}{{/localizestardust}}"></label><br>
-                <label for="attribute.roll" class="resource-label flexlarge rollable" data-roll="{{#rollLevel attribute}}{{/rollLevel}}" data-label="{{#localizestardust key_att}}{{/localizestardust}}">{{#localizestardust key_att}}{{/localizestardust}}</label>
+                <label for="attribute.roll" class="resource-label flexlarge rollable" data-roll="{{#rollLevel attribute}}{{/rollLevel}}" data-label="{{#localizestardust key_att}}{{/localizestardust}}">{{#localizestardust key_att}}{{/localizestardust}} [{{#getDieMax attribute}}{{/getDieMax}}]</label>
               </div>
             </aside>
             <section class="grid-span-2" style="border: 4px groove #eeede0; background-color: {{#getattributecolor key_att}}{{/getattributecolor}};">
