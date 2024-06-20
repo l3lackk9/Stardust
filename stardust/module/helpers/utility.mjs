@@ -123,7 +123,7 @@ export function solveDefenseRoll( actor) {
   {
     skillbonus = " + " + (maxDiceNumber(actor.system.currentarmor) / 2);
   }
-  var defenseroll = "2" + skillbonus;
+  var defenseroll = "4" + skillbonus;
   return defenseroll
 }
 

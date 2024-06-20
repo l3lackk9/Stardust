@@ -168,7 +168,7 @@ Handlebars.registerHelper('initiativeImages', function( agility, mind) {
 Handlebars.registerHelper('defenseText', function() {
   var skillbonus = 0;
   if(rollLevelToDice(this.actor.system.currentarmor) != "0") skillbonus = (maxDiceNumber(this.actor.system.currentarmor) / 2);
-  return "[" + (2 + skillbonus) + "]<div class=\"" + rollLevelImagePath( safeNumber(this.actor.system.currentarmor) ) + "\"></div>";
+  return "[" + (4 + skillbonus) + "]<div class=\"" + rollLevelImagePath( safeNumber(this.actor.system.currentarmor) ) + "\"></div>";
 });
 
 Handlebars.registerHelper('rolldefense', function() {
