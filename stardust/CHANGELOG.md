@@ -40,3 +40,7 @@
 ## 2.0.6
 - Altered defense calculation from dice max addition, to 4 + (half dice max of armor)
 - Passive attribute skills in place of passives for each skill
+
+## 2.0.7
+- Updated to version 12 of foundry API
+- Updated system to fix deprication warnings
