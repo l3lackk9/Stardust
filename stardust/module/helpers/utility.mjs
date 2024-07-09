@@ -160,8 +160,7 @@ export async function chatCardRoll(rollCast, label, actor, item, token, advNorDi
 
   // oops
   if(roll == null) return;
-  // evaluate
-  await roll.evaluate({async: true});
+  await roll.evaluate();
 
   var damagedata = ""
   var typeisdata = ""
@@ -202,7 +201,7 @@ export async function chatCardRoll(rollCast, label, actor, item, token, advNorDi
     tokenId: token?.uuid || null,
     speaker: ChatMessage.getSpeaker({actor: actor, token}),
     user: game.user.id,
-    type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+    style: CONST.CHAT_MESSAGE_STYLES.OTHER,
 
     flavor: actor.name + ": " + label,
     damage: damagedata,

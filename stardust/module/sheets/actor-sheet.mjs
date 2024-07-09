@@ -10,7 +10,7 @@ export class StardustActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["stardust", "sheet", "actor"],
       template: "systems/stardust/templates/actor/actor-sheet.html",
       width: 600,
@@ -157,8 +157,8 @@ export class StardustActorSheet extends ActorSheet {
               }
             },
             default: "yes",
-            render: html => console.log("Register interactivity in the rendered dialog"),
-            close: html => console.log("This always is logged no matter which option is chosen")
+            render: html => {},
+            close: html => {}
             });
             d.render(true);
             return
@@ -248,8 +248,8 @@ export class StardustActorSheet extends ActorSheet {
         }
       },
       default: "none",
-      render: html => console.log("Register interactivity in the rendered dialog"),
-      close: html => console.log("This always is logged no matter which option is chosen")
+      render: html => {},
+      close: html => {}
       });
       d.render(true);
     }

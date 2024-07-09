@@ -2,11 +2,11 @@
   "id": "stardust",
   "title": "Stardust",
   "description": "The Stardust system for FoundryVTT!",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "compatibility": {
-    "minimum": 10,
-    "verified": "11.307",
-    "maximum": 11
+    "minimum": 12,
+    "verified": "12.328",
+    "maximum": 12
   },
   "authors": [{
     "name": "Asacolips"

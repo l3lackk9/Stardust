@@ -7,7 +7,7 @@ export class StardustItemSheet extends ItemSheet {
 
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["stardust", "sheet", "item"],
       width: 520,
       height: 480,
