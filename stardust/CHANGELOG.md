@@ -49,3 +49,4 @@
 - Implants do not apply inventory bulk to units
 - Armor displays type blocked on character sheet
 - Weapons show energy or physical tag after damage type
+- Memory meter appears on npc unit sheets

@@ -102,6 +102,23 @@
         <section class="grid-span-1">
           {{> "systems/stardust/templates/actor/parts/actor-features.html"}}
           {{> "systems/stardust/templates/actor/parts/actor-spells.html"}}
+          <section class="grid grid-10col" style="border: 2px groove #eeede0;">
+            <div class="grid-span-4">
+              <label for="system.shields" class="resource-label">Memory</label>
+              <label>({{numberFormat system.currentMemoryUsed decimals=0}}/{{numberFormat (getPsiMemory) decimals=0}})</label>
+            </div>
+            <div class="grid-span-5">
+              <div style="height: 10px; width: 70%; display:inline-block;">
+                <div style="height: 10px; width: 100%; border: 2px groove #eeede0; display: flex;">
+                  <div style="width: {{#getMemoryPercent}}{{/getMemoryPercent}}%; height: 96%; background-color: #bb2222;">
+                  </div>
+                  <div style="width: {{#invertedMemoryPercent}}{{/invertedMemoryPercent}}%; height: 96%; background-color: #bbbbbb;">
+                  </div>
+                </div>
+              </div>
+              <label>{{numberFormat (getMemoryPercentUnclamped) decimals=0}}%</label>
+            </div>
+          </section>
         </section>
       </section>
       <section class="grid grid-10col" style="border: 2px groove #eeede0;">
