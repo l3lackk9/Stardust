@@ -44,3 +44,8 @@
 ## 2.0.7
 - Updated to version 12 of foundry API
 - Updated system to fix deprication warnings
+
+## 2.0.8
+- Implants do not apply inventory bulk to units
+- Armor displays type blocked on character sheet
+- Weapons show energy or physical tag after damage type

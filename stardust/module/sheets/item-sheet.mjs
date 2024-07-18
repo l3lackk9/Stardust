@@ -106,7 +106,9 @@ export class StardustItemSheet extends ItemSheet {
     
     if(safeNumber(itemData.system.damage) > 0)
     {
-      context.system.damagedata = "Damage: " + safeNumber(itemData.system.damage) + " [" + context.system.typeisdata + "]";
+      var typephysicaldata = "P";
+      if(itemData.system.traits.energy) typephysicaldata = "E";
+      context.system.damagedata = "Damage: " + safeNumber(itemData.system.damage) + " [" + context.system.typeisdata + "]" + "[" + typephysicaldata + "]";
     }
     
     return context;

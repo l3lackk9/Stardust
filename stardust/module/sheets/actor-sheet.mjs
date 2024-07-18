@@ -134,7 +134,6 @@ export class StardustActorSheet extends ActorSheet {
           item = owner.items.get(itemId);
         }
       }
-      var damagetype = ""
       if(item != null)
       {
         if(psionicsburned == 0)

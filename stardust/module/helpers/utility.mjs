@@ -188,9 +188,11 @@ export async function chatCardRoll(rollCast, label, actor, item, token, advNorDi
         typeisdata = (game.i18n.localize(CONFIG.STARDUST.translate[t]) ?? t)
       }
     }
+    var typephysicaldata = "P";
+    if(item.system.traits.energy) typephysicaldata = "E";
     if(safeNumber(item.system.damage) > 0)
     {
-      damagedata = "Damage: " + safeNumber(item.system.damage) + " [" + typeisdata + "]";
+      damagedata = "Damage: " + safeNumber(item.system.damage) + " [" + typeisdata + "]" + "[" + typephysicaldata + "]";
     }
   }
 
