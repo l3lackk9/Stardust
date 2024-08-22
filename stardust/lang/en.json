@@ -31,6 +31,8 @@
   "STARDUST.TraitTwoHanded":    "Two Handed",
   "STARDUST.TraitPhysical":     "Physical",
   "STARDUST.TraitEnergy":       "Energy",
+  "STARDUST.TraitFireCone":     "Firing Cone",
+  "STARDUST.TraitPenetrate":    "Penetrates",
   "STARDUST.TraitReload":       "Reload",
   "STARDUST.TraitCharge":       "Charge",
   "STARDUST.AttackBlunt":        "Blunt",
@@ -39,5 +41,14 @@
   "STARDUST.AttackAcid":         "Acid",
   "STARDUST.AttackCold":         "Cold",
   "STARDUST.AttackElec":         "Electricity",
-  "STARDUST.AttackHeat":         "Heat"
+  "STARDUST.AttackHeat":         "Heat",
+  "STARDUST.TargetSelf":            "Self",
+  "STARDUST.TargetOther":           "Other",
+  "STARDUST.TargetObject":          "Object",
+  "STARDUST.TargetCreature":        "Creature",
+  "STARDUST.TargetLivingCreature":  "Organic Creature",
+  "STARDUST.TargetMachineCreature": "Machine Creature",
+  "STARDUST.DisciplineAugmentation":  "Augmentation",
+  "STARDUST.DisciplineManipulation":  "Manipulation",
+  "STARDUST.DisciplineProjection":    "Projection"
 }

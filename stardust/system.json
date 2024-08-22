@@ -2,11 +2,11 @@
   "id": "stardust",
   "title": "Stardust",
   "description": "The Stardust system for FoundryVTT!",
-  "version": "2.0.4",
+  "version": "2.0.8",
   "compatibility": {
-    "minimum": 10,
-    "verified": "11.307",
-    "maximum": 11
+    "minimum": 12,
+    "verified": "12.328",
+    "maximum": 12
   },
   "authors": [{
     "name": "Asacolips"
@@ -22,8 +22,10 @@
       "path": "lang/en.json"
     }
   ],
-  "gridDistance": 5,
-  "gridUnits": "ft",
+  "grid": {
+	  "distance": 1,
+	  "units": "units"
+  },
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
   "url": "",

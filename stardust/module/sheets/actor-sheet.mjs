@@ -10,7 +10,7 @@ export class StardustActorSheet extends ActorSheet {
 
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["stardust", "sheet", "actor"],
       template: "systems/stardust/templates/actor/actor-sheet.html",
       width: 600,
@@ -134,7 +134,6 @@ export class StardustActorSheet extends ActorSheet {
           item = owner.items.get(itemId);
         }
       }
-      var damagetype = ""
       if(item != null)
       {
         if(psionicsburned == 0)
@@ -157,8 +156,8 @@ export class StardustActorSheet extends ActorSheet {
               }
             },
             default: "yes",
-            render: html => console.log("Register interactivity in the rendered dialog"),
-            close: html => console.log("This always is logged no matter which option is chosen")
+            render: html => {},
+            close: html => {}
             });
             d.render(true);
             return
@@ -204,52 +203,59 @@ export class StardustActorSheet extends ActorSheet {
       title: label,
       content: "<p>What is the situational modifier?</p>",
       buttons: {
+        terrible: {
+        label: "Terrible (-1d8)",
+        callback: () => {
+            chatCardRoll( dataset.roll + " - 1d8[Terrible]" + contamination, label, owner, item, owner.token, 0, true, 0)
+            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
+          }
+        },
+        worse: {
+        label: "Worse (-1d6)",
+        callback: () => {
+            chatCardRoll( dataset.roll + " - 1d6[Worse]" + contamination, label, owner, item, owner.token, 0, true, 0)
+            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
+          }
+        },
+        bad: {
+        label: "Bad (-1d4)",
+        callback: () => {
+            chatCardRoll( dataset.roll + " - 1d4[Bad]" + contamination, label, owner, item, owner.token, 0, true, 0)
+            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
+          }
+        },
+        tiny: {
+        label: "Good (+1d4)",
+        callback: () => {
+            chatCardRoll( dataset.roll + " + 1d4[Good]" + contamination, label, owner, item, owner.token, 0, true, 0)
+            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
+          }
+        },
+        small: {
+        label: "Great (+1d6)",
+        callback: () => {
+            chatCardRoll( dataset.roll + " + 1d6[Great]" + contamination, label, owner, item, owner.token, 0, true, 0)
+            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
+          }
+        },
+        good: {
+        label: "Amazing (+1d8)",
+        callback: () => {
+            chatCardRoll( dataset.roll + " + 1d8[Amazing]" + contamination, label, owner, item, owner.token, 0, true, 0)
+            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
+          }
+        },
         none: {
         label: "None",
         callback: () => {
             chatCardRoll( dataset.roll + contamination, label, owner, item, owner.token, 0, true, 0)
             if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
           }
-        },
-        tiny: {
-        label: "Tiny (d4)",
-        callback: () => {
-            chatCardRoll( dataset.roll + " + 1d4[Tiny]" + contamination, label, owner, item, owner.token, 0, true, 0)
-            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
-          }
-        },
-        small: {
-        label: "Small (d6)",
-        callback: () => {
-            chatCardRoll( dataset.roll + " + 1d6[Small]" + contamination, label, owner, item, owner.token, 0, true, 0)
-            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
-          }
-        },
-        good: {
-        label: "Good (d8)",
-        callback: () => {
-            chatCardRoll( dataset.roll + " + 1d8[Good]" + contamination, label, owner, item, owner.token, 0, true, 0)
-            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
-          }
-        },
-        great: {
-        label: "Great (d10)",
-        callback: () => {
-            chatCardRoll( dataset.roll + " + 1d10[Great]" + contamination, label, owner, item, owner.token, 0, true, 0)
-            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
-          }
-        },
-        amazing: {
-        label: "Amazing (d12)",
-        callback: () => {
-            chatCardRoll( dataset.roll + " + 1d12[Amazing]" + contamination, label, owner, item, owner.token, 0, true, 0)
-            if(psionicsburned == 2) owner.update({["system.stress"]: safeNumber( owner.system.stress ) + 1});
-          }
         }
       },
       default: "none",
-      render: html => console.log("Register interactivity in the rendered dialog"),
-      close: html => console.log("This always is logged no matter which option is chosen")
+      render: html => {},
+      close: html => {}
       });
       d.render(true);
     }

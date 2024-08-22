@@ -3,7 +3,7 @@
     <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}"/>
     <div class="header-fields">
       <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="Name"/></h1>
-      <h3 class="charname">{{#if (overZero item.system.range)}}Range: {{item.system.range}}ft {{/if}}{{system.damagedata}}<br>{{system.traitsdata}}</h3>
+      <h3 class="charname"><b>Discipline:</b> {{#localizestardust item.system.discipline}}{{/localizestardust}}<br><b>Memory:</b> {{item.system.memory}} <b>DC:</b> {{item.system.dc}} <b>Resist:</b> {{#localizestardust item.system.save}}{{/localizestardust}}{{#if (notEmpty item.system.duration)}}<br><b>Duration:</b> {{item.system.duration}}{{/if}}<br><b>Target:</b> {{#localizestardust item.system.target}}{{/localizestardust}}{{#if (overZero item.system.range)}}<br><b>Range:</b> {{item.system.range}}u {{/if}}{{system.damagedata}}<br>{{system.traitsdata}}</h3>
       
     </div>
   </header>
@@ -28,9 +28,33 @@
         <h2>Stats</h2></br>
         <div class="properties grid grid-3col">
           <div class="resource flex-group-center">
+            <label for="system.speed" class="resource-label">Discipline</label> 
+            <div class="resource-content flexrow flex-center flex-between">
+              {{{dropdown (getdisciplines) system.discipline "system." "discipline" ""}}}
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+            <label for="system.memory" class="resource-label">Memory Cost</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.memory" value="{{system.memory}}" data-dtype="Number"/>
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+            <label for="system.range" class="resource-label">Psionic DC</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.dc" value="{{system.dc}}" data-dtype="Number"/>
+            </div>
+          </div>
+          <div class="resource flex-group-center">
             <label for="system.range" class="resource-label">Range</label>
             <div class="resource-content flexrow flex-center flex-between">
               <input type="text" name="system.range" value="{{system.range}}" data-dtype="Number"/>
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+            <label for="system.range" class="resource-label">Target</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              {{{dropdown (gettargets) system.target "system." "target" ""}}}
             </div>
           </div>
           <div class="resource flex-group-center">
@@ -40,9 +64,15 @@
             </div>
           </div>
           <div class="resource flex-group-center">
-            <label for="system.memory" class="resource-label">Memory Cost</label>
+            <label for="system.damage" class="resource-label">Duration</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input type="text" name="system.memory" value="{{system.memory}}" data-dtype="Number"/>
+              <input type="text" name="system.duration" value="{{system.duration}}" data-dtype="String"/>
+            </div>
+          </div>
+          <div class="resource flex-group-center">
+            <label for="system.range" class="resource-label">Save Type</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              {{{dropdown (getattributes) system.save "system." "save" ""}}}
             </div>
           </div>
         </div>

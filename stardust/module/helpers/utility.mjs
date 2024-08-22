@@ -18,8 +18,11 @@ export function rollLevelToDice(val) {
 
     case 5:
       return "d12"
+      
+    case 6:
+      return "d20"
   }
-  return "d20"
+  return "d100"
 }
 
 export function rollLevelToTraining(val) {
@@ -42,8 +45,11 @@ export function rollLevelToTraining(val) {
 
     case 5:
       return "Legendary"
+
+    case 6:
+      return "Mythic"
   }
-  return "Mythic"
+  return "Nightmare"
 }
 
 export function rollLevelImagePath(val) {
@@ -66,8 +72,11 @@ export function rollLevelImagePath(val) {
 
     case 5:
       return "fas fa-dice-d12"
+      
+    case 6:
+      return "fas fa-dice-d20"
   }
-  return "fas fa-dice-d20"
+  return "fas fa-skull"
 }
 
 export function maxDiceNumber(val) {
@@ -90,8 +99,11 @@ export function maxDiceNumber(val) {
 
     case 5:
       return 12
+      
+    case 6:
+      return 20
   }
-  return 20
+  return 100
 }
 
 export function solveSkillRoll( actor, baseskill, trainingval) {
@@ -109,7 +121,7 @@ export function solveDefenseRoll( actor) {
   var skillbonus = "";
   if(rollLevelToDice(actor.system.currentarmor) != "0")
   {
-    skillbonus = " + " + rollLevelToDice(actor.system.currentarmor);
+    skillbonus = " + " + (maxDiceNumber(actor.system.currentarmor) / 2);
   }
   var defenseroll = "4" + skillbonus;
   return defenseroll
@@ -148,8 +160,7 @@ export async function chatCardRoll(rollCast, label, actor, item, token, advNorDi
 
   // oops
   if(roll == null) return;
-  // evaluate
-  await roll.evaluate({async: true});
+  await roll.evaluate();
 
   var damagedata = ""
   var typeisdata = ""
@@ -177,9 +188,11 @@ export async function chatCardRoll(rollCast, label, actor, item, token, advNorDi
         typeisdata = (game.i18n.localize(CONFIG.STARDUST.translate[t]) ?? t)
       }
     }
+    var typephysicaldata = "P";
+    if(item.system.traits.energy) typephysicaldata = "E";
     if(safeNumber(item.system.damage) > 0)
     {
-      damagedata = "Damage: " + safeNumber(item.system.damage) + " [" + typeisdata + "]";
+      damagedata = "Damage: " + safeNumber(item.system.damage) + " [" + typeisdata + "]" + "[" + typephysicaldata + "]";
     }
   }
 
@@ -190,7 +203,7 @@ export async function chatCardRoll(rollCast, label, actor, item, token, advNorDi
     tokenId: token?.uuid || null,
     speaker: ChatMessage.getSpeaker({actor: actor, token}),
     user: game.user.id,
-    type: CONST.CHAT_MESSAGE_TYPES.OTHER,
+    style: CONST.CHAT_MESSAGE_STYLES.OTHER,
 
     flavor: actor.name + ": " + label,
     damage: damagedata,

@@ -30,3 +30,26 @@
 - Attributes accessible to inline rolls
 - Initiative uses proper formula when rolled by foundry
 - Made item property cleanup/debug a togglable flag
+
+## 2.0.5
+- Added proper support for psionic stats in their item sheet
+- Moved all distances to units instead of ft
+- Penetration flag for weapons that line fire
+- nightmare dice size (d100) for boss creatures or ships
+
+## 2.0.6
+- Altered defense calculation from dice max addition, to 4 + (half dice max of armor)
+- Passive attribute skills in place of passives for each skill
+
+## 2.0.7
+- Updated to version 12 of foundry API
+- Updated system to fix deprication warnings
+
+## 2.0.8
+- Implants do not apply inventory bulk to units
+- Armor displays type blocked on character sheet
+- Weapons show energy or physical tag after damage type
+- Memory meter appears on npc unit sheets
+
+## 2.0.9
+- Roll modifier UI is now limited to 1d8 maximum, and may be used to give negative bonuses for aiming at things in cover

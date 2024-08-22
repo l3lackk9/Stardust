@@ -246,6 +246,8 @@
 				"twohand": 0,
 				"physical": 0,
 				"energy": 0,
+				"firecone": 0,
+				"penetrate": 0,
 				"reload": 0,
 				"charge": 0
 			},
@@ -256,6 +258,11 @@
 		"spell": {
 			"templates": ["base"],
 			"memory": 1,
+			"discipline": "augmentation",
+			"target": "self",
+			"duration" : "",
+			"save": "none",
+			"dc": 4,
 			"type": {
 				"blunt": 0,
 				"slash": 0,

@@ -58,6 +58,7 @@ export class StardustActor extends Actor {
       systemData.currentMemoryUsed = 0;
     }
     systemData.currentBulk = 0
+    systemData.currentarmorType = ""
     systemData.maxBulk = 0
 
     // Iterate through items, scan for armor
@@ -87,18 +88,25 @@ export class StardustActor extends Actor {
             if(safeNumber(i.system.armor) > 0)
             {
               // scan for armors
-              systemData.currentarmor = Math.max( safeNumber(i.system.armor), systemData.currentarmor)
+              systemData.currentarmor = Math.max( safeNumber(i.system.armor), systemData.currentarmor);
+              for (var k in i.system.type){
+                if(safeNumber(i.system.type[k]) == 1)
+                {
+                  systemData.currentarmorType = " [" + (game.i18n.localize(CONFIG.STARDUST.translate[k]) ?? k) + "]";
+                }
+              }
             }
           }
           if(safeNumber(i.system.addedstoragebulk) != 0)
           {
             // scan for bags
-            systemData.maxBulk +=safeNumber(i.system.addedstoragebulk)
+            systemData.maxBulk += safeNumber(i.system.addedstoragebulk)
           }
         }
-        else
+        // Items always weigh you down... Unless it's implanted
+        if(!i.system.traits.implant)
         {
-          systemData.currentBulk += safeNumber(i.system.bulk) * safeNumber(i.system.quantity)
+          systemData.currentBulk += safeNumber(i.system.bulk) * safeNumber(i.system.quantity);
         }
       }
       else if (i.type === 'spell') {

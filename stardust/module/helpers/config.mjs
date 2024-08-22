@@ -1,9 +1,7 @@
 export const STARDUST = {};
 
-/**
- * The set of Ability Scores used within the sytem.
- * @type {Object}
- */
+STARDUST.maxmortalwounds = 3
+
 STARDUST.translate = {
   "body":         "STARDUST.AttributeBody",
   "agility":      "STARDUST.AttributeAgility",
@@ -37,6 +35,8 @@ STARDUST.translate = {
   "twohand":      "STARDUST.TraitTwoHanded",
   "physical":     "STARDUST.TraitPhysical",
   "energy":       "STARDUST.TraitEnergy",
+  "firecone":     "STARDUST.TraitFireCone",
+  "penetrate":    "STARDUST.TraitPenetrate",
   "reload":       "STARDUST.TraitReload",
   "charge":       "STARDUST.TraitCharge",
   "blunt":        "STARDUST.AttackBlunt",
@@ -45,7 +45,18 @@ STARDUST.translate = {
   "acid":         "STARDUST.AttackAcid",
   "cold":         "STARDUST.AttackCold",
   "electricity":  "STARDUST.AttackElec",
-  "heat":         "STARDUST.AttackHeat"
+  "heat":         "STARDUST.AttackHeat",
+
+  "self":             "STARDUST.TargetSelf",
+  "other":            "STARDUST.TargetOther",
+  "object":           "STARDUST.TargetObject",
+  "creature":         "STARDUST.TargetCreature",
+  "living_creature":  "STARDUST.TargetLivingCreature",
+  "machine_creature": "STARDUST.TargetMachineCreature",
+
+  "augmentation":     "STARDUST.DisciplineAugmentation",
+  "manipulation":     "STARDUST.DisciplineManipulation",
+  "projection":       "STARDUST.DisciplineProjection"
 };
 
 STARDUST.dicetoindex = {
@@ -55,7 +66,8 @@ STARDUST.dicetoindex = {
   "1d8": 3,
   "1d10": 4,
   "1d12": 5,
-  "1d20": 6
+  "1d20": 6,
+  "1d100": 7
 };
 
 STARDUST.trainingtoindex = {
@@ -65,9 +77,17 @@ STARDUST.trainingtoindex = {
   "profession": 3,
   "master": 4,
   "legendary": 5,
-  "mythic": 6
+  "mythic": 6,
+  "nightmare": 7
 };
 
+STARDUST.attributes = {
+  "none": "none",
+  "body": "body",
+  "agility": "agility",
+  "mind": "mind",
+  "will": "will"
+};
 
 STARDUST.attributecolor = {
   "body": "#e1723a",
@@ -101,6 +121,25 @@ STARDUST.skilldatalist = {
   "persuasion": "persuasion",
   "psionics": "psionics",
   "survival": "survival"
+}
+
+// for dropdowns
+// Keep template up to date
+STARDUST.disciplinesdatalist = {
+  "augmentation": "augmentation",
+  "manipulation": "manipulation",
+  "projection": "projection"
+}
+
+// for dropdowns
+// Keep template up to date
+STARDUST.targetdatalist = {
+  "self": "self",
+  "other": "other",
+  "object": "object",
+  "creature": "creature",
+  "living_creature": "living_creature",
+  "machine_creature": "machine_creature"
 }
 
 // If items and actors clean their data with the following lists
@@ -138,6 +177,8 @@ STARDUST.itemtraits = [
   "implant",
   "twohand",
   "physical",
+  "firecone",
+  "penetrate",
   "energy",
   "reload",
   "charge"
