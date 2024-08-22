@@ -50,3 +50,6 @@
 - Armor displays type blocked on character sheet
 - Weapons show energy or physical tag after damage type
 - Memory meter appears on npc unit sheets
+
+## 2.0.9
+- Roll modifier UI is now limited to 1d8 maximum, and may be used to give negative bonuses for aiming at things in cover
